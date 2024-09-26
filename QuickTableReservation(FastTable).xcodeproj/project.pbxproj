@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2B82CA56970003DB9BD /* TabBarController.swift */; };
+		2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */; };
+		2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */; };
+		2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BF2CA56E60003DB9BD /* OpenTableViewController.swift */; };
+		2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */; };
+		2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2092F2872CA5369C003DB9BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +36,12 @@
 		2092F2702CA5369A003DB9BD /* QuickTableReservation(FastTable).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickTableReservation(FastTable).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2862CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2902CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2092F2B82CA56970003DB9BD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePlacementViewController.swift; sourceTree = "<group>"; };
+		2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReservationViewController.swift; sourceTree = "<group>"; };
+		2092F2BF2CA56E60003DB9BD /* OpenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTableViewController.swift; sourceTree = "<group>"; };
+		2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTableViewController.swift; sourceTree = "<group>"; };
+		2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +103,8 @@
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
+				2092F2BA2CA5698B003DB9BD /* UIViewControllers */,
+				2092F2B72CA56933003DB9BD /* TabBarController */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
 				2092F2892CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests */,
 				2092F2932CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests */,
@@ -103,6 +120,26 @@
 				2092F2902CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2092F2B72CA56933003DB9BD /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				2092F2B82CA56970003DB9BD /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		2092F2BA2CA5698B003DB9BD /* UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */,
+				2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */,
+				2092F2BF2CA56E60003DB9BD /* OpenTableViewController.swift */,
+				2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */,
+				2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */,
+			);
+			path = UIViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +286,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */,
+				2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */,
+				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
+				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,
+				2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */,
+				2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
