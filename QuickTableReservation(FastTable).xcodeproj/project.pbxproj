@@ -13,6 +13,7 @@
 		2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BF2CA56E60003DB9BD /* OpenTableViewController.swift */; };
 		2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */; };
 		2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */; };
+		20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B325E82CA5A6A8000A731B /* AvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		2092F2BF2CA56E60003DB9BD /* OpenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTableViewController.swift; sourceTree = "<group>"; };
 		2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTableViewController.swift; sourceTree = "<group>"; };
 		2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		20B325E82CA5A6A8000A731B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -103,6 +105,7 @@
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
+				20B325E82CA5A6A8000A731B /* AvatarView.swift */,
 				2092F2BA2CA5698B003DB9BD /* UIViewControllers */,
 				2092F2B72CA56933003DB9BD /* TabBarController */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
@@ -289,6 +292,7 @@
 				2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */,
 				2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */,
 				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
+				20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */,
 				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,
 				2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */,
 				2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */,
