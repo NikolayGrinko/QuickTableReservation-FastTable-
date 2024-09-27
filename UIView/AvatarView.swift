@@ -23,7 +23,7 @@ class AvatarView: UIView {
         self.addSubview(avatarImgView)
         self.addSubview(nameLabel)
         self.addSubview(ownerLabel)
-        
+    
         avatarImgView.layer.borderWidth = 1.0
         avatarImgView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5)
         avatarImgView.clipsToBounds = true

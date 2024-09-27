@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86752CA75E86002DA4C3 /* CustomButton.swift */; };
+		200A86792CA76366002DA4C3 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86782CA76366002DA4C3 /* NotificationTableViewController.swift */; };
 		2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2B82CA56970003DB9BD /* TabBarController.swift */; };
 		2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */; };
 		2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200A86752CA75E86002DA4C3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		200A86782CA76366002DA4C3 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		2092F2702CA5369A003DB9BD /* QuickTableReservation(FastTable).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickTableReservation(FastTable).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2862CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2902CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,11 +106,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200A86772CA76254002DA4C3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				200A86782CA76366002DA4C3 /* NotificationTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
+				200A86772CA76254002DA4C3 /* Controllers */,
 				20E2C6FA2CA60AA700C863FB /* UIView */,
-				2092F2BA2CA5698B003DB9BD /* UIViewControllers */,
+				2092F2BA2CA5698B003DB9BD /* ViewControllers */,
 				2092F2B72CA56933003DB9BD /* TabBarController */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
 				2092F2892CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests */,
@@ -133,7 +146,7 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
-		2092F2BA2CA5698B003DB9BD /* UIViewControllers */ = {
+		2092F2BA2CA5698B003DB9BD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */,
@@ -142,13 +155,14 @@
 				2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */,
 				2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */,
 			);
-			path = UIViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		20E2C6FA2CA60AA700C863FB /* UIView */ = {
 			isa = PBXGroup;
 			children = (
 				20B325E82CA5A6A8000A731B /* AvatarView.swift */,
+				200A86752CA75E86002DA4C3 /* CustomButton.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -301,7 +315,9 @@
 				2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */,
 				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
 				20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */,
+				200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */,
 				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,
+				200A86792CA76366002DA4C3 /* NotificationTableViewController.swift in Sources */,
 				2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */,
 				2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */,
 			);
