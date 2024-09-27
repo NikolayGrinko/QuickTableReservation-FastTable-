@@ -105,7 +105,7 @@
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
-				20B325E82CA5A6A8000A731B /* AvatarView.swift */,
+				20E2C6FA2CA60AA700C863FB /* UIView */,
 				2092F2BA2CA5698B003DB9BD /* UIViewControllers */,
 				2092F2B72CA56933003DB9BD /* TabBarController */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
@@ -143,6 +143,14 @@
 				2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */,
 			);
 			path = UIViewControllers;
+			sourceTree = "<group>";
+		};
+		20E2C6FA2CA60AA700C863FB /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				20B325E82CA5A6A8000A731B /* AvatarView.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

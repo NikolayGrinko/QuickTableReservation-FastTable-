@@ -40,15 +40,15 @@ class AvatarView: UIView {
 
         let newHeight = self.frame.size.height + 6.0
         avatarImgView.bounds = CGRect(x: 0, y: 5, width: newHeight, height: newHeight)
-        avatarImgView.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+        avatarImgView.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY + 25)
         avatarImgView.layer.cornerRadius = newHeight / 2.0
         
-        nameLabel.bounds = CGRect(x: 100, y: 0, width: 200, height: 10)
-        nameLabel.center = CGPoint(x: self.bounds.midX + 130, y: self.bounds.midY - 10)
+        nameLabel.bounds = CGRect(x: 100, y: 0, width: 200, height: 15)
+        nameLabel.center = CGPoint(x: self.bounds.midX + 130, y: self.bounds.midY + 15)
         nameLabel.textColor = .black
         
         ownerLabel.bounds = CGRect(x: 50, y: 15, width: 80, height: 10)
-        ownerLabel.center = CGPoint(x: self.bounds.midX + 70, y: self.bounds.midY + 10)
+        ownerLabel.center = CGPoint(x: self.bounds.midX + 70, y: self.bounds.midY + 35)
         ownerLabel.textColor = .lightGray
     }
 
