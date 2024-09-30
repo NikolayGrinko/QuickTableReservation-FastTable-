@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class NotificationTableViewController: UITableViewController {
+// SelectingAnEstablishmentController
+class NotifTableViewController: UITableViewController {
 
     private let imageNames = [
         "folder",
