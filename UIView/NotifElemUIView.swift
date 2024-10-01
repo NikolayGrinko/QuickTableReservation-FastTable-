@@ -59,14 +59,6 @@ class NotifElemUIView: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    func configureNotif(title: NotifElem) {
-//        
-//        titleLabel.text = title.title
-//        titleSetLabel.text = title.titleSet
-//        titleDataLabel.text = title.titleData
-//        
-//    }
-    
     private func constraint() {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -64,7 +64,6 @@ class NotifTableViewController: UIViewController, UITableViewDataSource, UITable
         
         view.addSubview(tableView)
        
-       // tableView.addSubview(popUpView)
         tableView.frame = CGRect(x: 10, y: 70, width: view.frame.width - 20, height: view.frame.height / 3 - 20)
         tableView.register(PopUpViewUIView.self, forCellReuseIdentifier: identifier)
     }
