@@ -6,6 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86752CA75E86002DA4C3 /* CustomButton.swift */; };
+		200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */; };
+		206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */; };
+		2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2B82CA56970003DB9BD /* TabBarController.swift */; };
+		2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */; };
+		2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */; };
+		2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BF2CA56E60003DB9BD /* OpenTableViewController.swift */; };
+		2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */; };
+		2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */; };
+		209C43C82CA9B5C0007397BC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C43C72CA9B5C0007397BC /* NotificationViewController.swift */; };
+		209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C43CC2CA9F568007397BC /* NotifElemUIView.swift */; };
+		20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B325E82CA5A6A8000A731B /* AvatarView.swift */; };
+		20FCBBEE2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2092F2872CA5369C003DB9BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +40,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200A86752CA75E86002DA4C3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiTableViewController.swift; sourceTree = "<group>"; };
+		206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewUIView.swift; sourceTree = "<group>"; };
 		2092F2702CA5369A003DB9BD /* QuickTableReservation(FastTable).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickTableReservation(FastTable).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2862CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2902CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2092F2B82CA56970003DB9BD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePlacementViewController.swift; sourceTree = "<group>"; };
+		2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReservationViewController.swift; sourceTree = "<group>"; };
+		2092F2BF2CA56E60003DB9BD /* OpenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTableViewController.swift; sourceTree = "<group>"; };
+		2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseTableViewController.swift; sourceTree = "<group>"; };
+		2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		209C43C72CA9B5C0007397BC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		209C43CC2CA9F568007397BC /* NotifElemUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifElemUIView.swift; sourceTree = "<group>"; };
+		20B325E82CA5A6A8000A731B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedSelectedEstablishmentUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -85,9 +114,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200A86772CA76254002DA4C3 /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */,
+			);
+			path = TableViewControllers;
+			sourceTree = "<group>";
+		};
+		2021FE2A2CAC898F00A01BA3 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				200A86752CA75E86002DA4C3 /* CustomButton.swift */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
+				209C43C92CA9B665007397BC /* Controllers */,
+				200A86772CA76254002DA4C3 /* TableViewControllers */,
+				20E2C6FA2CA60AA700C863FB /* UIView */,
+				2092F2BA2CA5698B003DB9BD /* ViewControllers */,
+				2092F2B72CA56933003DB9BD /* TabBarController */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
 				2092F2892CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests */,
 				2092F2932CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests */,
@@ -103,6 +153,46 @@
 				2092F2902CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2092F2B72CA56933003DB9BD /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				2092F2B82CA56970003DB9BD /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		2092F2BA2CA5698B003DB9BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */,
+				2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */,
+				2092F2BF2CA56E60003DB9BD /* OpenTableViewController.swift */,
+				2092F2C12CA56E71003DB9BD /* CloseTableViewController.swift */,
+				2092F2C32CA56E87003DB9BD /* MenuTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		209C43C92CA9B665007397BC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				209C43C72CA9B5C0007397BC /* NotificationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		20E2C6FA2CA60AA700C863FB /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				2021FE2A2CAC898F00A01BA3 /* CustomButton */,
+				20B325E82CA5A6A8000A731B /* AvatarView.swift */,
+				209C43CC2CA9F568007397BC /* NotifElemUIView.swift */,
+				20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */,
+				206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +339,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */,
+				2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */,
+				209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */,
+				209C43C82CA9B5C0007397BC /* NotificationViewController.swift in Sources */,
+				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
+				20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */,
+				200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */,
+				206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */,
+				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,
+				200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */,
+				2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */,
+				2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */,
+				20FCBBEE2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
