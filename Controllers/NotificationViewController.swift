@@ -9,7 +9,7 @@ import UIKit
 
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let notifElemUIView = NotifElemUIView()
+   // let notifElemUIView = NotifElemUIView()
     
     let tableView = UITableView()
     

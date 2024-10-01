@@ -50,8 +50,8 @@ class NotifElemUIView: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(titleLabel)
-        addSubview(titleSetLabel)
-        addSubview(titleDataLabel)
+        self.addSubview(titleSetLabel)
+        self.addSubview(titleDataLabel)
         constraint()
     }
     
@@ -59,13 +59,13 @@ class NotifElemUIView: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureNotif(title: NotifElem) {
-        
-        titleLabel.text = title.title
-        titleSetLabel.text = title.titleSet
-        titleDataLabel.text = title.titleData
-        
-    }
+//    func configureNotif(title: NotifElem) {
+//        
+//        titleLabel.text = title.title
+//        titleSetLabel.text = title.titleSet
+//        titleDataLabel.text = title.titleData
+//        
+//    }
     
     private func constraint() {
         

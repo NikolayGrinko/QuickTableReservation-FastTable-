@@ -38,7 +38,7 @@ class MenuTableViewController: UIViewController {
         print("нажата вью поверх баттона")
         let notifTableVC = NotifTableViewController()
                 if let sheet = notifTableVC.sheetPresentationController {
-                    sheet.detents = [.medium(), .large()]
+                    sheet.detents = [.medium()]
                     sheet.prefersScrollingExpandsWhenScrolledToEdge = false
                     sheet.prefersGrabberVisible = true
                     sheet.largestUndimmedDetentIdentifier = .medium
