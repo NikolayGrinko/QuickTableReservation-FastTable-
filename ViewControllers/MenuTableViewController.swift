@@ -17,7 +17,19 @@ class MenuTableViewController: UIViewController {
     let avatarView = AvatarView()
     let sizeTapButton = CustomButton()
     
+    let flingButton: ActionButton = {
+        let fliButton = ActionButton()
+        fliButton.backgroundColor = .red
+        fliButton.frame = CGRect(x: 20, y: 740, width: 350, height: 50)
+        return fliButton
+    }()
     
+    let textLabel = UILabel()
+    
+    var dataSource: UICollectionViewDiffableDataSource<Section, OutlineItem>! = nil
+    var outlineCollectionView: UICollectionView! = nil
+
+    private var detailTargetChangeObserver: Any? = nil
     //_____________________
     enum Section {
         case main
@@ -50,16 +62,21 @@ class MenuTableViewController: UIViewController {
 
     }
     
-    var dataSource: UICollectionViewDiffableDataSource<Section, OutlineItem>! = nil
-    var outlineCollectionView: UICollectionView! = nil
-
-    private var detailTargetChangeObserver: Any? = nil
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(button)
         view.addSubview(clickerSelector)
         view.addSubview(avatarView)
+        
+        view.addSubview(flingButton)
+        flingButton.addSubview(textLabel)
+        textLabel.frame = CGRect(x: 120, y: 15, width: 150, height: 20)
+        textLabel.text = "Начать смену"
+        textLabel.textColor = .white
+        
         avatarView.frame = CGRect(x: 0, y: 60, width: 150, height: 40)
         
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
@@ -233,7 +250,7 @@ extension MenuTableViewController {
 
     private func configureCollectionView() {
         let collectionView =
-        UICollectionView(frame: CGRect(x: 0, y: 250, width: view.frame.size.width, height: view.frame.size.height), collectionViewLayout: generateLayout())
+        UICollectionView(frame: CGRect(x: 0, y: 250, width: view.frame.size.width, height: 470), collectionViewLayout: generateLayout())
         view.addSubview(collectionView)
 
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
