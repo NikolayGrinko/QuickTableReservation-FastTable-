@@ -9,31 +9,35 @@ import UIKit
 
 class MenuTableViewController: UIViewController {
 
-    let clickerSelector = ClickedSelectedEstablishmentUIView(frame: CGRect(x: 30, y: 160, width: 330, height: 50))
-    
-    let button = UIButton(frame: CGRect(x: 20, y: 150, width: 360, height: 80))
-    
+    enum Section {
+        case main
+    }
     
     let avatarView = AvatarView()
     let sizeTapButton = CustomButton()
     
+    let textLabel = UILabel()
+    var dataSource: UICollectionViewDiffableDataSource<Section, OutlineItem>! = nil
+    var outlineCollectionView: UICollectionView! = nil
+    private var detailTargetChangeObserver: Any? = nil
+    
+    let clickerSelector = ClickedSelectedEstablishmentUIView(frame: CGRect(x: 30,
+                                                                           y: 160,
+                                                                           width: 330,
+                                                                           height: 50))
+    let button = UIButton(frame: CGRect(x: 20,
+                                        y: 150,
+                                        width: 360,
+                                        height: 80))
     let flingButton: ActionButton = {
         let fliButton = ActionButton()
         fliButton.backgroundColor = .red
-        fliButton.frame = CGRect(x: 20, y: 740, width: 350, height: 50)
+        fliButton.frame = CGRect(x: 20,
+                                 y: 740,
+                                 width: 350,
+                                 height: 50)
         return fliButton
     }()
-    
-    let textLabel = UILabel()
-    
-    var dataSource: UICollectionViewDiffableDataSource<Section, OutlineItem>! = nil
-    var outlineCollectionView: UICollectionView! = nil
-
-    private var detailTargetChangeObserver: Any? = nil
-    //_____________________
-    enum Section {
-        case main
-    }
     
     class OutlineItem: Identifiable, Hashable {
         let imageName: String?
@@ -62,16 +66,32 @@ class MenuTableViewController: UIViewController {
 
     }
     
-    
-  
+    let avatarsImage: UIImageView = {
+        var image = UIImageView()
+        image.image = UIImage(systemName: "bell")
+        image.tintColor = .lightGray
+        image.frame = CGRect(x: 350, y: 95, width: 30, height: 30)
+        return image
+    }()
+ 
+    private func pointSizeButton() {
+        sizeTapButton.setTitle("2", for: .normal)
+        sizeTapButton.tintColor = .white
+        sizeTapButton.titleLabel?.font = .systemFont(ofSize: 10, weight: .medium)
+        sizeTapButton.layer.cornerRadius = 9
+        sizeTapButton.frame = CGRect(x: 365, y: 90, width: 18, height: 18)
+        sizeTapButton.backgroundColor = .red
+        sizeTapButton.addTarget(self, action: #selector(notifTap), for: .touchUpInside)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(button)
         view.addSubview(clickerSelector)
         view.addSubview(avatarView)
-        
         view.addSubview(flingButton)
+        view.addSubview(avatarsImage)
+        view.addSubview(sizeTapButton)
         flingButton.addSubview(textLabel)
         textLabel.frame = CGRect(x: 120, y: 15, width: 150, height: 20)
         textLabel.text = "Начать смену"
@@ -82,22 +102,14 @@ class MenuTableViewController: UIViewController {
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         button.backgroundColor = .systemGray6
         button.layer.cornerRadius = 10
-        view.addSubview(avatarsImage)
-        view.addSubview(sizeTapButton)
+       
         pointSizeButton()
-        
-        
-        
-        //navigationSetting()
         configureCollectionView()
         configureDataSource()
-        
         // Add a translucent background to the primary view controller for the Mac.
         splitViewController?.primaryBackgroundStyle = .sidebar
-        
         // покраска вьюКонтроллера
         view.backgroundColor = UIColor.clear
-          
         // Listen for when the split view controller is expanded or collapsed for iPad multi-tasking,
         // and on device rotate (iPhones that support regular size class).
         detailTargetChangeObserver =
@@ -123,12 +135,11 @@ class MenuTableViewController: UIViewController {
         }
     }
     
-    
     lazy var controlsOutlineItem: OutlineItem = {
     
         var controlsSubItems = [
             
-            OutlineItem(imageName: nil, title: NSLocalizedString("Настройки заведения", comment: ""), viewController: SegmentedControlViewController.self),
+            OutlineItem(imageName: nil, title: NSLocalizedString("Настройки заведения", comment: ""), viewController: SettingEstablishmentViewController.self), //+++
             OutlineItem(imageName: nil, title: NSLocalizedString("Время работы", comment: ""), viewController: SegmentedControlViewController.self),
             OutlineItem(imageName: nil, title: NSLocalizedString("Настройка бронирования", comment: ""), viewController: SegmentedControlViewController.self),
             OutlineItem(imageName: nil, title: NSLocalizedString("Меню", comment: ""), viewController: SegmentedControlViewController.self),
@@ -197,8 +208,6 @@ class MenuTableViewController: UIViewController {
         ]
     }()
 
-
-
     @objc func tapButton() {
         print("нажата вью поверх баттона")
         let notifTableVC = NotifTableViewController()
@@ -213,30 +222,6 @@ class MenuTableViewController: UIViewController {
                 present(notifTableVC, animated: true)
             }
     
-    
-    let avatarsImage: UIImageView = {
-        var image = UIImageView()
-        image.image = UIImage(systemName: "bell")
-        image.tintColor = .lightGray
-        image.frame = CGRect(x: 350, y: 95, width: 30, height: 30)
-        return image
-    }()
-    
-//    private func  navigationSetting() {
-//        let leftBarButtonItem = UIBarButtonItem(customView: avatarView)
-//        self.navigationItem.leftBarButtonItem = leftBarButtonItem
-//    }
-    
-    private func pointSizeButton() {
-        sizeTapButton.setTitle("2", for: .normal)
-        sizeTapButton.tintColor = .white
-        sizeTapButton.titleLabel?.font = .systemFont(ofSize: 10, weight: .medium)
-        sizeTapButton.layer.cornerRadius = 9
-        sizeTapButton.frame = CGRect(x: 365, y: 90, width: 18, height: 18)
-        sizeTapButton.backgroundColor = .red
-        sizeTapButton.addTarget(self, action: #selector(notifTap), for: .touchUpInside)
-    }
-    
     @objc func notifTap() {
         print("Всего пришло 2 оповещения")
         
@@ -245,7 +230,6 @@ class MenuTableViewController: UIViewController {
         }
     }
      
-
 extension MenuTableViewController {
 
     private func configureCollectionView() {

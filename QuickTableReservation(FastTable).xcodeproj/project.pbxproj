@@ -21,6 +21,7 @@
 		209C43C82CA9B5C0007397BC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C43C72CA9B5C0007397BC /* NotificationViewController.swift */; };
 		209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C43CC2CA9F568007397BC /* NotifElemUIView.swift */; };
 		20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B325E82CA5A6A8000A731B /* AvatarView.swift */; };
+		20E9033C2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */; };
 		20FCBBEE2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		209C43C72CA9B5C0007397BC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		209C43CC2CA9F568007397BC /* NotifElemUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifElemUIView.swift; sourceTree = "<group>"; };
 		20B325E82CA5A6A8000A731B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEstablishmentViewController.swift; sourceTree = "<group>"; };
 		20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedSelectedEstablishmentUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,10 +147,8 @@
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
-				2045C8512CB9BA260028E10C /* FlingActionButton */,
-				209C43C92CA9B665007397BC /* Controllers */,
-				200A86772CA76254002DA4C3 /* TableViewControllers */,
-				20E2C6FA2CA60AA700C863FB /* UIView */,
+				20E903382CB9CFF7009A1DD6 /* MenuTableVCFiles */,
+				20E9033A2CB9D3FB009A1DD6 /* SettingUpAnEstablishment */,
 				2092F2BA2CA5698B003DB9BD /* ViewControllers */,
 				2092F2B72CA56933003DB9BD /* TabBarController */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
@@ -200,13 +200,40 @@
 		20E2C6FA2CA60AA700C863FB /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				20E903392CB9D0FE009A1DD6 /* TableViewCell */,
 				2021FE2A2CAC898F00A01BA3 /* CustomButton */,
 				20B325E82CA5A6A8000A731B /* AvatarView.swift */,
-				209C43CC2CA9F568007397BC /* NotifElemUIView.swift */,
 				20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */,
-				206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		20E903382CB9CFF7009A1DD6 /* MenuTableVCFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2045C8512CB9BA260028E10C /* FlingActionButton */,
+				209C43C92CA9B665007397BC /* Controllers */,
+				200A86772CA76254002DA4C3 /* TableViewControllers */,
+				20E2C6FA2CA60AA700C863FB /* UIView */,
+			);
+			path = MenuTableVCFiles;
+			sourceTree = "<group>";
+		};
+		20E903392CB9D0FE009A1DD6 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				209C43CC2CA9F568007397BC /* NotifElemUIView.swift */,
+				206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		20E9033A2CB9D3FB009A1DD6 /* SettingUpAnEstablishment */ = {
+			isa = PBXGroup;
+			children = (
+				20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */,
+			);
+			path = SettingUpAnEstablishment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +391,7 @@
 				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
 				20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */,
 				200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */,
+				20E9033C2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift in Sources */,
 				2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */,
 				206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */,
 				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,

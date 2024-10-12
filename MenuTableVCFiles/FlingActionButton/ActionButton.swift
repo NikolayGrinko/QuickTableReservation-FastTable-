@@ -105,7 +105,6 @@ class ActionButton: UIButton {
                 }
             }
         }
-        
     }
     
     func getSwipeDirection(translation:CGPoint) -> SwipeDirection {
@@ -120,9 +119,9 @@ class ActionButton: UIButton {
         
     }
     
-//    override func sendActions(for controlEvents: UIControl.Event) {
-//        super.sendActions(for: controlEvents)
-//    }
+    override func sendActions(for controlEvents: UIControl.Event) {
+        super.sendActions(for: controlEvents)
+    }
 
 }
 
