@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86752CA75E86002DA4C3 /* CustomButton.swift */; };
 		200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */; };
+		2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */; };
+		2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045C8692CB9BBEC0028E10C /* ActionButton.swift */; };
 		206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */; };
 		2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2B82CA56970003DB9BD /* TabBarController.swift */; };
 		2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */; };
@@ -19,6 +21,7 @@
 		209C43C82CA9B5C0007397BC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C43C72CA9B5C0007397BC /* NotificationViewController.swift */; };
 		209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C43CC2CA9F568007397BC /* NotifElemUIView.swift */; };
 		20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B325E82CA5A6A8000A731B /* AvatarView.swift */; };
+		20E9033C2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */; };
 		20FCBBEE2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,8 @@
 /* Begin PBXFileReference section */
 		200A86752CA75E86002DA4C3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiTableViewController.swift; sourceTree = "<group>"; };
+		2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
+		2045C8692CB9BBEC0028E10C /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewUIView.swift; sourceTree = "<group>"; };
 		2092F2702CA5369A003DB9BD /* QuickTableReservation(FastTable).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickTableReservation(FastTable).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2862CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +60,7 @@
 		209C43C72CA9B5C0007397BC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		209C43CC2CA9F568007397BC /* NotifElemUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifElemUIView.swift; sourceTree = "<group>"; };
 		20B325E82CA5A6A8000A731B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEstablishmentViewController.swift; sourceTree = "<group>"; };
 		20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedSelectedEstablishmentUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,12 +136,19 @@
 			path = CustomButton;
 			sourceTree = "<group>";
 		};
+		2045C8512CB9BA260028E10C /* FlingActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				2045C8692CB9BBEC0028E10C /* ActionButton.swift */,
+			);
+			path = FlingActionButton;
+			sourceTree = "<group>";
+		};
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
-				209C43C92CA9B665007397BC /* Controllers */,
-				200A86772CA76254002DA4C3 /* TableViewControllers */,
-				20E2C6FA2CA60AA700C863FB /* UIView */,
+				20E903382CB9CFF7009A1DD6 /* MenuTableVCFiles */,
+				20E9033A2CB9D3FB009A1DD6 /* SettingUpAnEstablishment */,
 				2092F2BA2CA5698B003DB9BD /* ViewControllers */,
 				2092F2B72CA56933003DB9BD /* TabBarController */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
@@ -158,6 +171,7 @@
 		2092F2B72CA56933003DB9BD /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */,
 				2092F2B82CA56970003DB9BD /* TabBarController.swift */,
 			);
 			path = TabBarController;
@@ -186,13 +200,40 @@
 		20E2C6FA2CA60AA700C863FB /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				20E903392CB9D0FE009A1DD6 /* TableViewCell */,
 				2021FE2A2CAC898F00A01BA3 /* CustomButton */,
 				20B325E82CA5A6A8000A731B /* AvatarView.swift */,
-				209C43CC2CA9F568007397BC /* NotifElemUIView.swift */,
 				20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */,
-				206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		20E903382CB9CFF7009A1DD6 /* MenuTableVCFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2045C8512CB9BA260028E10C /* FlingActionButton */,
+				209C43C92CA9B665007397BC /* Controllers */,
+				200A86772CA76254002DA4C3 /* TableViewControllers */,
+				20E2C6FA2CA60AA700C863FB /* UIView */,
+			);
+			path = MenuTableVCFiles;
+			sourceTree = "<group>";
+		};
+		20E903392CB9D0FE009A1DD6 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				209C43CC2CA9F568007397BC /* NotifElemUIView.swift */,
+				206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		20E9033A2CB9D3FB009A1DD6 /* SettingUpAnEstablishment */ = {
+			isa = PBXGroup;
+			children = (
+				20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */,
+			);
+			path = SettingUpAnEstablishment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +339,10 @@
 			);
 			mainGroup = 2092F2672CA5369A003DB9BD;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2045C8502CB9B7990028E10C /* XCRemoteSwiftPackageReference "TGFlingActionButton" */,
+				2045C8522CB9BA6C0028E10C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2092F2712CA5369A003DB9BD /* Products */;
 			projectDirPath = "";
@@ -346,8 +391,11 @@
 				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
 				20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */,
 				200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */,
+				20E9033C2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift in Sources */,
+				2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */,
 				206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */,
 				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,
+				2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */,
 				200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */,
 				2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */,
 				2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */,
@@ -694,6 +742,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2045C8502CB9B7990028E10C /* XCRemoteSwiftPackageReference "TGFlingActionButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TilakGondi/TGFlingActionButton.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2045C8522CB9BA6C0028E10C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 2092F2682CA5369A003DB9BD /* Project object */;
 }

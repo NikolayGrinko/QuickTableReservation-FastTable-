@@ -1,16 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "серый2.png",
+      "filename" : "reset.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "серый2 1.png",
+      "filename" : "reset@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "reset@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
