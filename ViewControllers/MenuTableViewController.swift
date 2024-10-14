@@ -21,14 +21,69 @@ class MenuTableViewController: UIViewController {
     var outlineCollectionView: UICollectionView! = nil
     private var detailTargetChangeObserver: Any? = nil
     
-    let clickerSelector = ClickedSelectedEstablishmentUIView(frame: CGRect(x: 30,
-                                                                           y: 160,
-                                                                           width: 330,
-                                                                           height: 50))
-    let button = UIButton(frame: CGRect(x: 20,
-                                        y: 150,
-                                        width: 360,
-                                        height: 80))
+    let clickerSelector = ClickedSelectedEstablishmentUIView(frame: CGRect(x: 30, y: 160, width: 330, height: 50))
+    
+    let buttonTap = UIButton()
+    private lazy var nameOfTheEstablishmentButtons: UIButton = {
+        // Настраиваем конфигурацию кнопки
+        var config = UIButton.Configuration.gray()
+        // Задаем текст для title и subtitle
+        config.title = "Fruit Bunny"
+        config.subtitle = "улица Лисицина 2А,Ярославль, ярославская область"
+        config.baseBackgroundColor = .systemGray6
+        config.buttonSize = .medium
+        config.imagePlacement = .trailing
+        config.titleAlignment = .leading
+        config.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
+        config.cornerStyle = .large
+        // Настраиваем стили для title и subtitle
+        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var updated = incoming
+            updated.font = UIFont.systemFont(ofSize: 20)
+            updated.foregroundColor = UIColor.black
+            return updated
+        }
+        config.subtitleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var updated = incoming
+            updated.font = UIFont.systemFont(ofSize: 12)
+            updated.foregroundColor = UIColor.lightGray
+            return updated
+        }
+        if let image = UIImage(systemName: "chevron.up.chevron.down")?.withTintColor(.black, renderingMode: .alwaysOriginal) {
+            config.image = image // Добавляем черное изображение
+            config.imagePadding = 110                   // Отступ изображения от текста
+            config.imagePlacement = .trailing           // Располагаем изображение слева от текста
+        }
+        // Присваиваем конфигурацию кнопке
+        buttonTap.configuration = config
+        buttonTap.frame = CGRect(x: 20, y: 160, width: 360, height: 70)
+        buttonTap.addTarget(self, action: #selector(goToInfoas), for: .touchUpInside)
+        // Добавляем кнопку на экран (пример для ViewController)
+       // button.translatesAutoresizingMaskIntoConstraints = false
+       // view.addSubview(buttonTap)
+        return buttonTap
+    }()
+        
+    @objc private func goToInfoas() {
+        print("нажата вью поверх баттона")
+        let notifTableVC = NotifTableViewController()
+                if let sheet = notifTableVC.sheetPresentationController {
+                    sheet.detents = [.medium()]
+                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                    sheet.prefersGrabberVisible = true
+                    sheet.largestUndimmedDetentIdentifier = .medium
+                    sheet.preferredCornerRadius = 20
+                    sheet.prefersEdgeAttachedInCompactHeight = true
+                }
+                present(notifTableVC, animated: true)
+            }
+    
+    
+    
+//    let button = UIButton(frame: CGRect(x: 20,
+//                                        y: 150,
+//                                        width: 360,
+//                                        height: 80))
     let flingButton: ActionButton = {
         let fliButton = ActionButton()
         fliButton.backgroundColor = .red
@@ -86,12 +141,13 @@ class MenuTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(button)
-        view.addSubview(clickerSelector)
+        //view.addSubview(button)
+       // view.addSubview(clickerSelector)
         view.addSubview(avatarView)
         view.addSubview(flingButton)
         view.addSubview(avatarsImage)
         view.addSubview(sizeTapButton)
+        view.addSubview(nameOfTheEstablishmentButtons)
         flingButton.addSubview(textLabel)
         textLabel.frame = CGRect(x: 120, y: 15, width: 150, height: 20)
         textLabel.text = "Начать смену"
@@ -99,9 +155,9 @@ class MenuTableViewController: UIViewController {
         
         avatarView.frame = CGRect(x: 0, y: 60, width: 150, height: 40)
         
-        button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-        button.backgroundColor = .systemGray6
-        button.layer.cornerRadius = 10
+//        button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+//        button.backgroundColor = .systemGray6
+//        button.layer.cornerRadius = 10
        
         pointSizeButton()
         configureCollectionView()
@@ -208,19 +264,19 @@ class MenuTableViewController: UIViewController {
         ]
     }()
 
-    @objc func tapButton() {
-        print("нажата вью поверх баттона")
-        let notifTableVC = NotifTableViewController()
-                if let sheet = notifTableVC.sheetPresentationController {
-                    sheet.detents = [.medium()]
-                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-                    sheet.prefersGrabberVisible = true
-                    sheet.largestUndimmedDetentIdentifier = .medium
-                    sheet.preferredCornerRadius = 20
-                    sheet.prefersEdgeAttachedInCompactHeight = true
-                }
-                present(notifTableVC, animated: true)
-            }
+//    @objc func tapButton() {
+//        print("нажата вью поверх баттона")
+//        let notifTableVC = NotifTableViewController()
+//                if let sheet = notifTableVC.sheetPresentationController {
+//                    sheet.detents = [.medium()]
+//                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+//                    sheet.prefersGrabberVisible = true
+//                    sheet.largestUndimmedDetentIdentifier = .medium
+//                    sheet.preferredCornerRadius = 20
+//                    sheet.prefersEdgeAttachedInCompactHeight = true
+//                }
+//                present(notifTableVC, animated: true)
+//            }
     
     @objc func notifTap() {
         print("Всего пришло 2 оповещения")
