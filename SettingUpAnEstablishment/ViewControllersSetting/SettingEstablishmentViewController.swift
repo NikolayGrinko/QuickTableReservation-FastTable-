@@ -83,6 +83,16 @@ class SettingEstablishmentViewController: UIViewController {
         
     @objc private func goToInfo() {
         print("restaurant")
+        let restaurant = SettingEstablViewController()
+                if let sheet = restaurant.sheetPresentationController {
+                    sheet.detents = [.medium()]
+                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                    sheet.prefersGrabberVisible = true
+                    sheet.largestUndimmedDetentIdentifier = .medium
+                    sheet.preferredCornerRadius = 20
+                    sheet.prefersEdgeAttachedInCompactHeight = true
+                }
+                present(restaurant, animated: true)
     }
      
     let button2 = UIButton()
@@ -127,6 +137,16 @@ class SettingEstablishmentViewController: UIViewController {
         
     @objc private func goToInfoas() {
         print("choice of cuisine")
+        let kitchen = SettingKitchenViewController()
+                if let sheet = kitchen.sheetPresentationController {
+                    sheet.detents = [.medium()]
+                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                    sheet.prefersGrabberVisible = true
+                    sheet.largestUndimmedDetentIdentifier = .medium
+                    sheet.preferredCornerRadius = 20
+                    sheet.prefersEdgeAttachedInCompactHeight = true
+                }
+                present(kitchen, animated: true)
     }
     
     let button3 = UIButton()
