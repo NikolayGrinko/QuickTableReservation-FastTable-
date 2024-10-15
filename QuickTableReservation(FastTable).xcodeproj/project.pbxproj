@@ -12,6 +12,10 @@
 		2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */; };
 		2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045C8692CB9BBEC0028E10C /* ActionButton.swift */; };
 		206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */; };
+		20753C1A2CBDC07F004E2EB5 /* SettingEstablViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */; };
+		20753C1C2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */; };
+		20753C1E2CBDC17C004E2EB5 /* KitchenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */; };
+		20753C222CBDC2F7004E2EB5 /* SettingKitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C212CBDC2F7004E2EB5 /* SettingKitchenViewController.swift */; };
 		2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2B82CA56970003DB9BD /* TabBarController.swift */; };
 		2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */; };
 		2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */; };
@@ -48,6 +52,10 @@
 		2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		2045C8692CB9BBEC0028E10C /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewUIView.swift; sourceTree = "<group>"; };
+		20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEstablViewController.swift; sourceTree = "<group>"; };
+		20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranSettingTableViewCell.swift; sourceTree = "<group>"; };
+		20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenTableViewCell.swift; sourceTree = "<group>"; };
+		20753C212CBDC2F7004E2EB5 /* SettingKitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingKitchenViewController.swift; sourceTree = "<group>"; };
 		2092F2702CA5369A003DB9BD /* QuickTableReservation(FastTable).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickTableReservation(FastTable).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2862CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2902CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +152,32 @@
 			path = FlingActionButton;
 			sourceTree = "<group>";
 		};
+		20753C182CBDBFBF004E2EB5 /* SettingEstablisTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */,
+				20753C212CBDC2F7004E2EB5 /* SettingKitchenViewController.swift */,
+			);
+			path = SettingEstablisTableViewCell;
+			sourceTree = "<group>";
+		};
+		20753C1F2CBDC19F004E2EB5 /* ViewControllersSetting */ = {
+			isa = PBXGroup;
+			children = (
+				20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */,
+			);
+			path = ViewControllersSetting;
+			sourceTree = "<group>";
+		};
+		20753C202CBDC1B8004E2EB5 /* ViewContrSettingCellCell */ = {
+			isa = PBXGroup;
+			children = (
+				20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */,
+				20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */,
+			);
+			path = ViewContrSettingCellCell;
+			sourceTree = "<group>";
+		};
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +265,9 @@
 		20E9033A2CB9D3FB009A1DD6 /* SettingUpAnEstablishment */ = {
 			isa = PBXGroup;
 			children = (
-				20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */,
+				20753C202CBDC1B8004E2EB5 /* ViewContrSettingCellCell */,
+				20753C182CBDBFBF004E2EB5 /* SettingEstablisTableViewCell */,
+				20753C1F2CBDC19F004E2EB5 /* ViewControllersSetting */,
 			);
 			path = SettingUpAnEstablishment;
 			sourceTree = "<group>";
@@ -387,12 +423,16 @@
 				2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */,
 				2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */,
 				209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */,
+				20753C1C2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift in Sources */,
 				209C43C82CA9B5C0007397BC /* NotificationViewController.swift in Sources */,
 				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
+				20753C222CBDC2F7004E2EB5 /* SettingKitchenViewController.swift in Sources */,
 				20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */,
 				200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */,
 				20E9033C2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift in Sources */,
+				20753C1E2CBDC17C004E2EB5 /* KitchenTableViewCell.swift in Sources */,
 				2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */,
+				20753C1A2CBDC07F004E2EB5 /* SettingEstablViewController.swift in Sources */,
 				206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */,
 				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,
 				2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */,

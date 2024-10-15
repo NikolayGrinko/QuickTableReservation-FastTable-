@@ -8,11 +8,18 @@
 import Foundation
 import UIKit
 
+
+struct Todo {
+    var title: String
+    var titles: String
+    var isMarked: Bool
+}
+
 class PopUpViewUIView: UITableViewCell {
     
-    private var titleNameLabel: UILabel = {
+    var titleNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Fruit Bunny."
+        //label.text = "Fruit Bunny."
         label.font = .systemFont(ofSize: 16)
         //label.frame = CGRect(x: 0, y: 5, width: 150, height: 20)
         label.textColor = .black
@@ -21,9 +28,9 @@ class PopUpViewUIView: UITableViewCell {
         return label
     }()
     
-    private var titleAdressLabel: UILabel = {
+     var titleAdressLabel: UILabel = {
         let label = UILabel()
-        label.text = "улица Лисицина 2А,Ярославль,Ярославская область. "
+        //label.text = "улица Лисицина 2А,Ярославль,Ярославская область. "
         label.font = .systemFont(ofSize: 12)
         //label.frame = CGRect(x: 0, y: 25, width: 300, height: 40)
         label.textColor = .lightGray
@@ -33,9 +40,9 @@ class PopUpViewUIView: UITableViewCell {
     }()
     
     
-    private let imagesViewTap: UIImageView = {
+   let imagesViewTap: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "серый")
+        //image.image = UIImage(named: "серый")
 //        image.frame.size.width = 10
 //        image.frame.size.height = 10
         //image.backgroundColor = .black

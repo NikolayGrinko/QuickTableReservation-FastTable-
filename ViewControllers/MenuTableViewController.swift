@@ -21,7 +21,7 @@ class MenuTableViewController: UIViewController {
     var outlineCollectionView: UICollectionView! = nil
     private var detailTargetChangeObserver: Any? = nil
     
-    let clickerSelector = ClickedSelectedEstablishmentUIView(frame: CGRect(x: 30, y: 160, width: 330, height: 50))
+   // let clickerSelector = ClickedSelectedEstablishmentUIView(frame: CGRect(x: 30, y: 160, width: 330, height: 50))
     
     let buttonTap = UIButton()
     private lazy var nameOfTheEstablishmentButtons: UIButton = {
@@ -78,12 +78,6 @@ class MenuTableViewController: UIViewController {
                 present(notifTableVC, animated: true)
             }
     
-    
-    
-//    let button = UIButton(frame: CGRect(x: 20,
-//                                        y: 150,
-//                                        width: 360,
-//                                        height: 80))
     let flingButton: ActionButton = {
         let fliButton = ActionButton()
         fliButton.backgroundColor = .red

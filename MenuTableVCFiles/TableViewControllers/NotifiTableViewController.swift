@@ -9,6 +9,13 @@ import UIKit
 
 class NotifTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
+    var todos = [Todo(title: "Fruit Bunny.", titles: "улица Лисицина 2А,Ярославль, ярославская область", isMarked: false),
+                 Todo(title: "Fruit Bunny.", titles: "улица Лисицина 2А,Ярославль, ярославская область", isMarked: false),
+                 Todo(title: "Fruit Bunny.", titles: "улица Лисицина 2А,Ярославль, ярославская область", isMarked: false),
+                 Todo(title: "Fruit Bunny.", titles: "улица Лисицина 2А,Ярославль, ярославская область", isMarked: false),
+                 Todo(title: "Fruit Bunny.", titles: "улица Лисицина 2А,Ярославль, ярославская область", isMarked: false)]
+    
     let identifier = "NotifTableViewController"
     
     let popUpView = PopUpViewUIView()
@@ -70,16 +77,32 @@ class NotifTableViewController: UIViewController, UITableViewDataSource, UITable
 
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return 4
+         return todos.count
     }
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        cell.backgroundColor = .systemGray6
+         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PopUpViewUIView
+         let todo = todos[indexPath.row]
+         
+         cell.titleNameLabel.text = todo.title
+         cell.titleAdressLabel.text = todo.titles
+         cell.imagesViewTap.image = todo.isMarked == true ? UIImage(named: "красный") : UIImage(named: "серый")
+         cell.backgroundColor = .systemGray6
         return cell
     }
     
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? PopUpViewUIView else { return }
+        
+        var todo = todos[indexPath.row]
+        
+        todo.isMarked = !todo.isMarked
+        todos.remove(at: indexPath.row)
+        todos.insert(todo, at: indexPath.row)
+        
+        cell.imagesViewTap.image = todo.isMarked ? UIImage(named: "красный") : UIImage(named: "серый")
     }
+    
 }
