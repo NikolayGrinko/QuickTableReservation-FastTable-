@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86752CA75E86002DA4C3 /* CustomButton.swift */; };
 		200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */; };
+		20113EBD2CC3049100903A01 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20113EBC2CC3049100903A01 /* Gallery.swift */; };
 		2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */; };
 		2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045C8692CB9BBEC0028E10C /* ActionButton.swift */; };
 		205BCB1D2CC1946800436812 /* PhotoCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB1C2CC1946800436812 /* PhotoCellVC.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		200A86752CA75E86002DA4C3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiTableViewController.swift; sourceTree = "<group>"; };
+		20113EBC2CC3049100903A01 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		2045C8692CB9BBEC0028E10C /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		205BCB1C2CC1946800436812 /* PhotoCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellVC.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */,
+				20113EBC2CC3049100903A01 /* Gallery.swift */,
 			);
 			path = ViewControllersSetting;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 			files = (
 				205BCB212CC197F100436812 /* TitulPhotoCollViewCell.swift in Sources */,
 				205BCB1F2CC1975100436812 /* GallerylPhotoCollViewCell.swift in Sources */,
+				20113EBD2CC3049100903A01 /* Gallery.swift in Sources */,
 				2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */,
 				2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */,
 				209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */,

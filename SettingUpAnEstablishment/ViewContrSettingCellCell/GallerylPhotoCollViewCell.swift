@@ -15,68 +15,68 @@ class GalleryPhotoCollViewCell: UICollectionViewCell {
     
     let identifier = "GalleryPhotoCollViewCell"
     
-    var imageView: UIImageView!
-    var deleteButton: UIButton!
-    var favoriteButton: UIButton!
-    var favoriteIcon: UIImageView!
+    var imageViewGallery: UIImageView!
+    var deleteButtonGallery: UIButton!
+    var favoriteButtonGallery: UIButton!
+    var favoriteIconGallery: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         // Image view to display the photo
-        imageView = UIImageView(frame: .zero)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleToFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
-        imageView.frame.size.width = 20
-        imageView.frame.size.height = 20
-        imageView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        contentView.addSubview(imageView)
+        imageViewGallery = UIImageView(frame: .zero)
+        imageViewGallery.translatesAutoresizingMaskIntoConstraints = false
+        imageViewGallery.contentMode = .scaleToFill
+        imageViewGallery.clipsToBounds = true
+        imageViewGallery.layer.cornerRadius = 20
+        imageViewGallery.frame.size.width = 20
+        imageViewGallery.frame.size.height = 20
+        imageViewGallery.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        contentView.addSubview(imageViewGallery)
         
         // Favorite button
-        favoriteButton = UIButton(type: .system)
-        favoriteButton.setTitle("★", for: .normal)
-        favoriteButton.backgroundColor = .white
-        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(favoriteButton)
+        favoriteButtonGallery = UIButton(type: .system)
+        favoriteButtonGallery.setTitle("★", for: .normal)
+        favoriteButtonGallery.backgroundColor = .white
+        favoriteButtonGallery.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(favoriteButtonGallery)
         
         // Delete button
-        deleteButton = UIButton(type: .system)
-        deleteButton.setTitle("X", for: .normal)
-        deleteButton.backgroundColor = .red
-        deleteButton.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(deleteButton)
+        deleteButtonGallery = UIButton(type: .system)
+        deleteButtonGallery.setTitle("X", for: .normal)
+        deleteButtonGallery.backgroundColor = .red
+        deleteButtonGallery.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(deleteButtonGallery)
         
         // Favorite icon
-        favoriteIcon = UIImageView(image: UIImage(systemName: "star.fill"))
-        favoriteIcon.backgroundColor = .systemGray5
-        favoriteIcon.translatesAutoresizingMaskIntoConstraints = false
+        favoriteIconGallery = UIImageView(image: UIImage(systemName: "star.fill"))
+        favoriteIconGallery.backgroundColor = .systemGray5
+        favoriteIconGallery.translatesAutoresizingMaskIntoConstraints = false
        // favoriteIcon.layer.cornerRadius = 20
-        favoriteIcon.isHidden = true
-        contentView.addSubview(favoriteIcon)
+        favoriteIconGallery.isHidden = true
+        contentView.addSubview(favoriteIconGallery)
         
         // Constraints
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageViewGallery.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageViewGallery.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageViewGallery.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 //            imageView.heightAnchor.constraint(equalToConstant: 70),
 //            imageView.widthAnchor.constraint(equalToConstant: 70),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            imageViewGallery.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            favoriteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            favoriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            favoriteButton.heightAnchor.constraint(equalToConstant: 30),
-            favoriteButton.heightAnchor.constraint(equalToConstant: 30),
+            favoriteButtonGallery.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            favoriteButtonGallery.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            favoriteButtonGallery.heightAnchor.constraint(equalToConstant: 30),
+            favoriteButtonGallery.heightAnchor.constraint(equalToConstant: 30),
             
-            deleteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            deleteButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            deleteButton.heightAnchor.constraint(equalToConstant: 30),
-            deleteButton.heightAnchor.constraint(equalToConstant: 30),
+            deleteButtonGallery.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            deleteButtonGallery.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            deleteButtonGallery.heightAnchor.constraint(equalToConstant: 30),
+            deleteButtonGallery.heightAnchor.constraint(equalToConstant: 30),
             
-            favoriteIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            favoriteIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5)
+            favoriteIconGallery.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            favoriteIconGallery.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5)
         ])
     }
     
