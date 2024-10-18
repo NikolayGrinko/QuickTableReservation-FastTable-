@@ -11,6 +11,9 @@
 		200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */; };
 		2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */; };
 		2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045C8692CB9BBEC0028E10C /* ActionButton.swift */; };
+		205BCB1D2CC1946800436812 /* PhotoCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB1C2CC1946800436812 /* PhotoCellVC.swift */; };
+		205BCB1F2CC1975100436812 /* GallerylPhotoCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB1E2CC1975100436812 /* GallerylPhotoCollViewCell.swift */; };
+		205BCB212CC197F100436812 /* TitulPhotoCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB202CC197F100436812 /* TitulPhotoCollViewCell.swift */; };
 		206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */; };
 		20753C1A2CBDC07F004E2EB5 /* SettingEstablViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */; };
 		20753C1C2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */; };
@@ -51,6 +54,9 @@
 		200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiTableViewController.swift; sourceTree = "<group>"; };
 		2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		2045C8692CB9BBEC0028E10C /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		205BCB1C2CC1946800436812 /* PhotoCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellVC.swift; sourceTree = "<group>"; };
+		205BCB1E2CC1975100436812 /* GallerylPhotoCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallerylPhotoCollViewCell.swift; sourceTree = "<group>"; };
+		205BCB202CC197F100436812 /* TitulPhotoCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitulPhotoCollViewCell.swift; sourceTree = "<group>"; };
 		206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewUIView.swift; sourceTree = "<group>"; };
 		20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEstablViewController.swift; sourceTree = "<group>"; };
 		20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranSettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -174,6 +180,8 @@
 			children = (
 				20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */,
 				20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */,
+				205BCB202CC197F100436812 /* TitulPhotoCollViewCell.swift */,
+				205BCB1E2CC1975100436812 /* GallerylPhotoCollViewCell.swift */,
 			);
 			path = ViewContrSettingCellCell;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 				20753C202CBDC1B8004E2EB5 /* ViewContrSettingCellCell */,
 				20753C182CBDBFBF004E2EB5 /* SettingEstablisTableViewCell */,
 				20753C1F2CBDC19F004E2EB5 /* ViewControllersSetting */,
+				205BCB1C2CC1946800436812 /* PhotoCellVC.swift */,
 			);
 			path = SettingUpAnEstablishment;
 			sourceTree = "<group>";
@@ -420,6 +429,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205BCB212CC197F100436812 /* TitulPhotoCollViewCell.swift in Sources */,
+				205BCB1F2CC1975100436812 /* GallerylPhotoCollViewCell.swift in Sources */,
 				2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */,
 				2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */,
 				209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */,
@@ -436,6 +447,7 @@
 				206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */,
 				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,
 				2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */,
+				205BCB1D2CC1946800436812 /* PhotoCellVC.swift in Sources */,
 				200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */,
 				2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */,
 				2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */,

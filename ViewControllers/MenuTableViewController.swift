@@ -142,6 +142,9 @@ class MenuTableViewController: UIViewController {
         view.addSubview(avatarsImage)
         view.addSubview(sizeTapButton)
         view.addSubview(nameOfTheEstablishmentButtons)
+        
+      
+        
         flingButton.addSubview(textLabel)
         textLabel.frame = CGRect(x: 120, y: 15, width: 150, height: 20)
         textLabel.text = "Начать смену"
@@ -258,19 +261,6 @@ class MenuTableViewController: UIViewController {
         ]
     }()
 
-//    @objc func tapButton() {
-//        print("нажата вью поверх баттона")
-//        let notifTableVC = NotifTableViewController()
-//                if let sheet = notifTableVC.sheetPresentationController {
-//                    sheet.detents = [.medium()]
-//                    sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-//                    sheet.prefersGrabberVisible = true
-//                    sheet.largestUndimmedDetentIdentifier = .medium
-//                    sheet.preferredCornerRadius = 20
-//                    sheet.prefersEdgeAttachedInCompactHeight = true
-//                }
-//                present(notifTableVC, animated: true)
-//            }
     
     @objc func notifTap() {
         print("Всего пришло 2 оповещения")
@@ -400,25 +390,3 @@ extension MenuTableViewController: UICollectionViewDelegate {
         }
     }
 }
-
-
-
-
-
-    
-//    @objc func notificationTap() {
-//        print("Всего пришло 2 оповещения")
-//        
-//        let tableVC = NotificationTableViewController()
-//        if let sheet = tableVC.sheetPresentationController {
-//            sheet.detents = [.medium(), .large()]
-//            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-//            sheet.prefersGrabberVisible = true
-//            sheet.largestUndimmedDetentIdentifier = .medium
-//            sheet.preferredCornerRadius = 20
-//            sheet.prefersEdgeAttachedInCompactHeight = true
-//        }
-//        present(tableVC, animated: true)
-//    }
-  
-//}
