@@ -4,17 +4,18 @@
 //
 //  Created by Николай Гринько on 12.10.2024.
 //
-
 import UIKit
 
-class SettingEstablishmentViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate {
+struct Photo {
+    var image: UIImage
+    var isFavorite: Bool = false
+}
+
+class SettingEstablishmentViewController: UIViewController, UICollectionViewDataSource, UIImagePickerControllerDelegate, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate, UICollectionViewDelegate {
     
     
     var isEditMode = false
-    var photos: [PhotosOne] = []
-    
-    //let gallery = Gallery()
-    
+
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.backgroundColor = .white
@@ -25,7 +26,7 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
     }()
     
     private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height + 1100)
+        CGSize(width: view.frame.width, height: view.frame.height + 1300)
     }
     
     let textNameLabel: UITextField = {
@@ -82,7 +83,6 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
         button.frame = CGRect(x: 10, y: 50, width: 380, height: 60)
         button.addTarget(self, action: #selector(goToInfo), for: .touchUpInside)
         // Добавляем кнопку на экран (пример для ViewController)
-        // button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button)
         return button
     }()
@@ -267,7 +267,6 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
         button5.frame = CGRect(x: 10, y: 750, width: 380, height: 60)
         button5.addTarget(self, action: #selector(contactInfo), for: .touchUpInside)
         // Добавляем кнопку на экран (пример для ViewController)
-        // button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button5)
         return button5
     }()
@@ -307,7 +306,6 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
         button6.frame = CGRect(x: 10, y: 820, width: 380, height: 60)
         button6.addTarget(self, action: #selector(nameCity), for: .touchUpInside)
         // Добавляем кнопку на экран (пример для ViewController)
-        // button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button6)
         return button6
     }()
@@ -347,7 +345,6 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
         button7.frame = CGRect(x: 10, y: 890, width: 380, height: 60)
         button7.addTarget(self, action: #selector(addressOfTheEstablishment), for: .touchUpInside)
         // Добавляем кнопку на экран (пример для ViewController)
-        // button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button7)
         return button7
     }()
@@ -388,7 +385,6 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
         button8.frame = CGRect(x: 10, y: 960, width: 185, height: 60)
         button8.addTarget(self, action: #selector(addressRegion), for: .touchUpInside)
         // Добавляем кнопку на экран (пример для ViewController)
-        // button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button8)
         return button8
     }()
@@ -429,7 +425,6 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
         button9.frame = CGRect(x: 200, y: 960, width: 190, height: 60)
         button9.addTarget(self, action: #selector(indexRegion), for: .touchUpInside)
         // Добавляем кнопку на экран (пример для ViewController)
-        // button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button9)
         return button9
     }()
@@ -443,12 +438,6 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
         title = "Настройка заведения"
         
         view.addSubview(scrollView)
-        collectionViewTitul.delegate = self
-        collectionViewTitul.dataSource = self
-        // configureTitulUI()
-        
-        
-        
         scrollView.addSubview(textNameLabel)
         scrollView.addSubview(restaurButton)
         scrollView.addSubview(choiceOfCuisineButtons)
@@ -461,597 +450,227 @@ class SettingEstablishmentViewController: UIViewController, UICollectionViewData
         scrollView.addSubview(addressRegionButton)
         scrollView.addSubview(indexRegionButton)
         
-        scrollView.addSubview(containerView)
-        containerView.addSubview(nameLabel)
-        containerView.addSubview(saveSizeLabel)
-        containerView.addSubview(collectionViewTitul)
-        collectionViewTitul.addSubview(addButton)
-        containerView.addSubview(saveButton)
-        containerView.addSubview(editModeButton)
-        
-     //   scrollView.addSubview(gallery!.addGalleryButton)
-        
-//        scrollView.addSubview(containerViewGallery)
-//        containerViewGallery.addSubview(nameLabelGallery)
-//        containerViewGallery.addSubview(saveSizeGalleryLabel)
-//        containerViewGallery.addSubview(collectionViewGallery)
-//        collectionViewGallery.addSubview(addGalleryButton)
-//        containerViewGallery.addSubview(saveGalleryButton)
-//        containerViewGallery.addSubview(editModeGalleryButton)
+        setupUI()
+        addFiles()
+        setupCollectionView()
     }
     
+    // Контейнеры для хранения фото
+    private var titlePhotos: [Photo] = []
+    private var galleryPhotos: [Photo] = []
     
-    let containerView: UIView = {
-        let containerView = UIView()
-        containerView.frame = CGRect(x: 10, y: 1040, width: 380, height: 400)
-        containerView.backgroundColor = #colorLiteral(red: 0.949019134, green: 0.9490200877, blue: 0.9705253243, alpha: 1)
-        containerView.layer.cornerRadius = 10
-        return containerView
+    // Переключатели режима редактирования
+    private var isEditingTitle = false
+    private var isEditingGallery = false
+    
+    // UI элементы
+    private let titleCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private let galleryCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private let saveButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Сохранить", for: .normal)
+        button.frame = CGRect(x: 10, y: 2030, width: 380, height: 60)
+        button.layer.cornerRadius = 10
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .systemGray
+        button.isHidden = true
+        return button
     }()
     
-    let nameLabel: UILabel = {
-        let nameLabel = UILabel()
-        nameLabel.text = "Титульные фото"
-        nameLabel.font = .systemFont(ofSize: 18, weight: .bold)
-        nameLabel.textColor = .black
-        nameLabel.frame = CGRect(x: 5, y: 10, width: 200, height: 20)
-        return nameLabel
+    private let titlePencilButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 350, y: 1060, width: 30, height: 30)
+        button.tintColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        button.layer.cornerRadius = 10
+        button.setImage(UIImage(systemName: "pencil"), for: .normal)
+        return button
     }()
     
-    let saveSizeLabel: UILabel = {
-        let saveSizeLabel = UILabel()
-        saveSizeLabel.text = "От 1 до 10 фото в формате JPG,JPGE"
-        saveSizeLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        saveSizeLabel.textColor = .systemGray
-        saveSizeLabel.frame = CGRect(x: 5, y: 35, width: 230, height: 20)
-        return saveSizeLabel
+    private let galleryPencilButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 350, y: 1560, width: 30, height: 30)
+        button.tintColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        button.layer.cornerRadius = 10
+        button.setImage(UIImage(systemName: "pencil"), for: .normal)
+        return button
     }()
     
-    // Initialize collectionView
-    var collectionViewTitul: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        var collectionViewTitul2 = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        layout.itemSize = CGSize(width: 100, height: 100)
-        collectionViewTitul2.frame = CGRect(x: 5, y: 70, width: 360, height: 250)
-        collectionViewTitul2.backgroundColor = #colorLiteral(red: 0.9490190148, green: 0.9490202069, blue: 0.9748199582, alpha: 1)
-        collectionViewTitul2.register(TitulPhotoCollViewCell.self, forCellWithReuseIdentifier: "TitulPhotoCollViewCell")
-        return collectionViewTitul2
-    }()
-    //Add button for adding photos (initially in the first cell)
-    lazy var addButton: UIButton = {
-        var addButton = UIButton(type: .custom)
-        addButton.setImage(UIImage(systemName: "camera"), for: .normal)
-        addButton.frame = CGRect(x: 5, y: 5, width: 100, height: 100)
-        addButton.tintColor = #colorLiteral(red: 0.9072304038, green: 0.9072304038, blue: 0.9072304038, alpha: 1)
-        addButton.addTarget(self, action: #selector(addPhotoButtonTapped), for: .touchUpInside)
-        return addButton
-    }()
+    // Настройка интерфейса
+    private func setupUI() {
+        view.backgroundColor = .white
+    }
     
-    // Save button (hidden initially)
-    lazy var saveButton: UIButton = {
-        let saveButton = UIButton(type: .system)
-        saveButton.setTitle("Сохранить", for: .normal)
-        saveButton.backgroundColor = #colorLiteral(red: 0.8862745166, green: 0.8862745166, blue: 0.8862745166, alpha: 1)
-        saveButton.tintColor = .black
-        saveButton.layer.cornerRadius = 10
-        saveButton.frame = CGRect(x: 10, y: 350, width: 350, height: 40)
+    // Создаем заголовки для контейнеров
+    private func addFiles() {
+        
+        var titleLabel = UILabel()
+        titleLabel = createLabel(withText: "Титульные фото")
+        titleLabel.frame = CGRect(x: 10, y: 1050, width: 150, height: 20)
+        titleLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        titleLabel.font = .systemFont(ofSize: 19)
+        
+        var titleFormatLabel = UILabel()
+        titleFormatLabel = createLabel(withText: "От 1 до 10 фото в формате JPG, JPGE")
+        titleFormatLabel.frame = CGRect(x: 10, y: 1080, width: 300, height: 20)
+        titleFormatLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        titleFormatLabel.font = .systemFont(ofSize: 15)
+        
+        let galleryLabel = createLabel(withText: "Галерея")
+        galleryLabel.frame = CGRect(x: 10, y: 1540, width: 150, height: 20)
+        galleryLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        galleryLabel.font = .systemFont(ofSize: 19)
+        
+        let galleryFormatLabel = createLabel(withText: "От 1 до 10 фото в формате JPG, JPGE")
+        galleryFormatLabel.frame = CGRect(x: 10, y: 1570, width: 300, height: 20)
+        galleryFormatLabel.textColor = .lightGray
+        galleryFormatLabel.font = .systemFont(ofSize: 15)
+        
+        scrollView.addSubview(titleLabel)
+        scrollView.addSubview(titleFormatLabel)
+        
+        scrollView.addSubview(galleryLabel)
+        scrollView.addSubview(galleryFormatLabel)
+        scrollView.addSubview(titleCollectionView)
+        scrollView.addSubview(galleryCollectionView)
+        scrollView.addSubview(titlePencilButton)
+        scrollView.addSubview(galleryPencilButton)
+        scrollView.addSubview(saveButton)
+        
+        // Назначаем действия для кнопок
+        titlePencilButton.addTarget(self, action: #selector(toggleTitleEditing), for: .touchUpInside)
+        galleryPencilButton.addTarget(self, action: #selector(toggleGalleryEditing), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(savePhotos), for: .touchUpInside)
+        
+    }
+    // Настройка CollectionView
+    private func setupCollectionView() {
+        titleCollectionView.dataSource = self
+        titleCollectionView.delegate = self
+        galleryCollectionView.dataSource = self
+        galleryCollectionView.delegate = self
+        
+       
+        
+        titleCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        titleCollectionView.frame = CGRect(x: 10, y: 1120, width: 380, height: 400)
+        titleCollectionView.contentInset = .init(top: 10, left: 5, bottom: 10, right: 10)
+        titleCollectionView.tintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        titleCollectionView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
+        galleryCollectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        galleryCollectionView.frame = CGRect(x: 10, y: 1610, width: 380, height: 400)
+        galleryCollectionView.contentInset = .init(top: 10, left: 5, bottom: 10, right: 10)
+        galleryCollectionView.tintColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        galleryCollectionView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    }
+    
+    @objc private func toggleTitleEditing() {
+        isEditingTitle.toggle()
+        let newImage = isEditingTitle ? UIImage(systemName: "xmark") : UIImage(systemName: "pencil")
+        titlePencilButton.setImage(newImage, for: .normal)
+        titleCollectionView.reloadData()
+    }
+    
+    @objc private func toggleGalleryEditing() {
+        isEditingGallery.toggle()
+        let newImage = isEditingGallery ? UIImage(systemName: "xmark") : UIImage(systemName: "pencil")
+        galleryPencilButton.setImage(newImage, for: .normal)
+        galleryCollectionView.reloadData()
+    }
+    
+    @objc private func savePhotos() {
+        // Логика сохранения фотографий
         saveButton.isHidden = true
-        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        return saveButton
-    }()
-    
-    // Edit Mode button
-    lazy var editModeButton: UIButton = {
-        editModeButton = UIButton(type: .system)
-        editModeButton.backgroundColor = #colorLiteral(red: 0.9995579123, green: 0.8042607903, blue: 0.82557863, alpha: 1)
-        editModeButton.tintColor = .red
-        editModeButton.layer.cornerRadius = 5
-        editModeButton.setImage(UIImage(systemName: "pencil"), for: .normal)
-        editModeButton.frame = CGRect(x: 340, y: 20, width: 30, height: 30)
-        editModeButton.addTarget(self, action: #selector(toggleEditMode), for: .touchUpInside)
-        return editModeButton
-    }()
-    
-    @objc func addPhotoButtonTapped() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
     }
     
-    @objc func saveButtonTapped() {
-        // Save photos logic
-        saveButton.isHidden = true
-        isEditMode = false
-        editModeButton.setImage(UIImage(systemName: "pencil"), for: .normal)
-        collectionViewTitul.reloadData()
-    }
-    
-    @objc func toggleEditMode() {
-        isEditMode.toggle()
-        let icon = isEditMode ? "xmark" : "pencil"
-        editModeButton.setImage(UIImage(systemName: icon), for: .normal)
-        collectionViewTitul.reloadData()
-    }
-    
-    // Handle image selection
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.originalImage] as? UIImage {
-            let newPhoto = PhotosOne(image: image, isFavorite: false)
-            photos.append(newPhoto)
-            collectionViewTitul.reloadData()
-            //collectionViewGallery.reloadData()
-            saveButton.isHidden = false // Show save button when a new photo is added
-        }
-        picker.dismiss(animated: true, completion: nil)
-        
-//        if let image = info[.originalImage] as? UIImage {
-//            let newPhotoG = PhotosOne(image: image, isFavorite: false)
-//            photos.append(newPhotoG)
-//            //collectionViewTitul.reloadData()
-//            collectionViewGallery.reloadData()
-//            saveGalleryButton.isHidden = false // Show save button when a new photo is added
-//        }
-//        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    // UICollectionView DataSource methods
+    // CollectionView DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count + 1 // Additional cell for the "add photo" button
+        if collectionView == titleCollectionView {
+            return titlePhotos.count + 1
+        } else {
+            return galleryPhotos.count + 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == photos.count {
-            // The last cell for adding photos
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TitulPhotoCollViewCell", for: indexPath) as! TitulPhotoCollViewCell
-            cell.imageView.image = UIImage(systemName: "camera")
-            cell.imageView.tintColor = .systemGray4
-            cell.backgroundColor = .systemGray5
-            cell.imageView.layer.cornerRadius = 10
-            cell.layer.cornerRadius = 10
-            cell.favoriteButton.isHidden = true
-            cell.deleteButton.isHidden = true
-            return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+        
+        let photos = collectionView == titleCollectionView ? titlePhotos : galleryPhotos
+        if indexPath.item < photos.count {
+            let photo = photos[indexPath.item]
+            cell.configure(with: photo, isEditing: collectionView == titleCollectionView ? isEditingTitle : isEditingGallery)
+            cell.deleteAction = { [weak self] in
+                self?.deletePhoto(at: indexPath, in: collectionView)
+            }
+            cell.favoriteAction = { [weak self] in
+                self?.toggleFavorite(at: indexPath, in: collectionView)
+            }
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TitulPhotoCollViewCell", for: indexPath) as! TitulPhotoCollViewCell
-            let photo = photos[indexPath.row]
-            cell.layer.cornerRadius = 10
-            cell.imageView.image = photo.image
-            cell.favoriteIcon.isHidden = !photo.isFavorite
-            cell.imageView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            cell.imageView.layer.cornerRadius = 10
-            cell.deleteButton.tag = indexPath.row
-            cell.favoriteButton.tag = indexPath.row
-            cell.deleteButton.addTarget(self, action: #selector(deletePhoto), for: .touchUpInside)
-            cell.favoriteButton.addTarget(self, action: #selector(toggleFavorite), for: .touchUpInside)
-            // Show delete and favorite buttons only in edit mode
-            cell.favoriteButton.isHidden = !isEditMode
-            cell.deleteButton.isHidden = !isEditMode
-            return cell
+            cell.configureForAddPhoto()
+            cell.addPhotoAction = { [weak self] in
+                self?.openImagePicker(for: collectionView)
+            }
         }
         
-//            if indexPath.row == photos.count {
-//                // The last cell for adding photos
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryPhotoCollViewCell", for: indexPath) as! GalleryPhotoCollViewCell
-//                cell.imageViewGallery.image = UIImage(systemName: "camera")
-//                cell.imageViewGallery.tintColor = .systemGray4
-//                cell.backgroundColor = .systemGray5
-//                cell.imageViewGallery.layer.cornerRadius = 10
-//                cell.layer.cornerRadius = 10
-//                cell.favoriteButtonGallery.isHidden = true
-//                cell.deleteButtonGallery.isHidden = true
-//                return cell
-//            } else {
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryPhotoCollViewCell", for: indexPath) as! GalleryPhotoCollViewCell
-//                let photo = photos[indexPath.row]
-//                cell.layer.cornerRadius = 10
-//                cell.imageViewGallery.image = photo.image
-//                cell.favoriteIconGallery.isHidden = !photo.isFavorite
-//                cell.imageViewGallery.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-//                cell.imageViewGallery.layer.cornerRadius = 10
-//                cell.deleteButtonGallery.tag = indexPath.row
-//                cell.favoriteButtonGallery.tag = indexPath.row
-//                cell.deleteButtonGallery.addTarget(self, action: #selector(deletePhotoGallery), for: .touchUpInside)
-//                cell.favoriteButtonGallery.addTarget(self, action: #selector(toggleFavoriteGallery), for: .touchUpInside)
-//                // Show delete and favorite buttons only in edit mode
-//                cell.favoriteButtonGallery.isHidden = !isEditMode
-//                cell.deleteButtonGallery.isHidden = !isEditMode
-//               // return cellGallery
-//                return cell
-//            }
-           // return cell
-        }
-    
-    
-    @objc func deletePhoto(sender: UIButton) {
-        photos.remove(at: sender.tag)
-        collectionViewTitul.reloadData()
-        if photos.isEmpty {
-            saveButton.isHidden = true // Hide save button if no photos
-        }
+        return cell
     }
-    
-    @objc func toggleFavorite(sender: UIButton) {
-        let index = sender.tag
-        photos[index].isFavorite.toggle()
-        collectionViewTitul.reloadData()
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
     }
+
     
-    
-    
-//
-//    
-//    let containerViewGallery: UIView = {
-//        let containerView = UIView()
-//        containerView.frame = CGRect(x: 10, y: 1450, width: 380, height: 400)
-//        containerView.backgroundColor = #colorLiteral(red: 0.949019134, green: 0.9490200877, blue: 0.9705253243, alpha: 1)
-//        containerView.layer.cornerRadius = 10
-//        return containerView
-//    }()
-//    
-//    let nameLabelGallery: UILabel = {
-//        let nameLabel = UILabel()
-//        nameLabel.text = "Галерея"
-//        nameLabel.font = .systemFont(ofSize: 18, weight: .bold)
-//        nameLabel.textColor = .black
-//        nameLabel.frame = CGRect(x: 5, y: 10, width: 200, height: 20)
-//        return nameLabel
-//    }()
-//    
-//    let saveSizeGalleryLabel: UILabel = {
-//        let saveSizeLabel = UILabel()
-//        saveSizeLabel.text = "От 1 до 10 фото в формате JPG,JPGE"
-//        saveSizeLabel.font = .systemFont(ofSize: 12, weight: .regular)
-//        saveSizeLabel.textColor = .systemGray
-//        saveSizeLabel.frame = CGRect(x: 5, y: 35, width: 230, height: 20)
-//        return saveSizeLabel
-//    }()
-//    
-//    // Initialize collectionView
-//    var collectionViewGallery: UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        var collectionViewTitul2 = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-//        layout.itemSize = CGSize(width: 100, height: 100)
-//        collectionViewTitul2.frame = CGRect(x: 5, y: 70, width: 360, height: 250)
-//        collectionViewTitul2.backgroundColor = #colorLiteral(red: 0.9490190148, green: 0.9490202069, blue: 0.9748199582, alpha: 1)
-//        collectionViewTitul2.register(GalleryPhotoCollViewCell.self, forCellWithReuseIdentifier: "GalleryPhotoCollViewCell")
-//        return collectionViewTitul2
-//    }()
-//    //Add button for adding photos (initially in the first cell)
-//    lazy var addGalleryButton: UIButton = {
-//        var addButton = UIButton(type: .custom)
-//        addButton.setImage(UIImage(systemName: "camera"), for: .normal)
-//        addButton.frame = CGRect(x: 5, y: 5, width: 100, height: 100)
-//        addButton.tintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-//        //addButton.addTarget(self, action: #selector(addPhotoButtonGalleryTapped), for: .touchUpInside)
-//        return addButton
-//    }()
-//    
-//    // Save button (hidden initially)
-//    lazy var saveGalleryButton: UIButton = {
-//        let saveButton = UIButton(type: .system)
-//        saveButton.setTitle("Сохранить", for: .normal)
-//        saveButton.backgroundColor = #colorLiteral(red: 0.8862745166, green: 0.8862745166, blue: 0.8862745166, alpha: 1)
-//        saveButton.tintColor = .black
-//        saveButton.layer.cornerRadius = 10
-//        saveButton.frame = CGRect(x: 10, y: 350, width: 350, height: 40)
-//        saveButton.isHidden = true
-//        saveButton.addTarget(self, action: #selector(saveButtonGalleryTapped), for: .touchUpInside)
-//        return saveButton
-//    }()
-//    
-//    // Edit Mode button
-//    lazy var editModeGalleryButton: UIButton = {
-//        editModeGalleryButton = UIButton(type: .system)
-//        editModeGalleryButton.backgroundColor = #colorLiteral(red: 0.9995579123, green: 0.8042607903, blue: 0.82557863, alpha: 1)
-//        editModeGalleryButton.tintColor = .red
-//        editModeGalleryButton.layer.cornerRadius = 5
-//        editModeGalleryButton.setImage(UIImage(systemName: "pencil"), for: .normal)
-//        editModeGalleryButton.frame = CGRect(x: 340, y: 20, width: 30, height: 30)
-//        editModeGalleryButton.addTarget(self, action: #selector(toggleEditGalleryMode), for: .touchUpInside)
-//        return editModeGalleryButton
-//    }()
-//    
-////    @objc func addPhotoButtonGalleryTapped() {
-////        let imagePickerGallery = UIImagePickerController()
-////        imagePickerGallery.delegate = self
-////        imagePickerGallery.sourceType = .photoLibrary
-////        present(imagePickerGallery, animated: true, completion: nil)
-////    }
-//    
-//    @objc func saveButtonGalleryTapped() {
-//        // Save photos logic
-//        saveGalleryButton.isHidden = true
-//        isEditMode = false
-//        editModeGalleryButton.setImage(UIImage(systemName: "pencil"), for: .normal)
-//        collectionViewGallery.reloadData()
-//    }
-//    
-//    @objc func toggleEditGalleryMode() {
-//        isEditMode.toggle()
-//        let icon = isEditMode ? "xmark" : "pencil"
-//        editModeGalleryButton.setImage(UIImage(systemName: icon), for: .normal)
-//        collectionViewGallery.reloadData()
-//    }
-//    
-//    
-//    @objc func deletePhotoGallery(sender: UIButton) {
-////        photos.remove(at: sender.tag)
-////        collectionViewGallery.reloadData()
-////        if photos.isEmpty {
-////            saveGalleryButton.isHidden = true // Hide save button if no photos
-////        }
-//    }
-//    
-//    @objc func toggleFavoriteGallery(sender: UIButton) {
-//        let index = sender.tag
-//       // photos[index].isFavorite.toggle()
-//        collectionViewGallery.reloadData()
-//    }
+    // UIImagePickerControllerDelegate
+    private func openImagePicker(for collectionView: UICollectionView) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = false
+        present(picker, animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            if titleCollectionView == picker.view.superview {
+                titlePhotos.append(Photo(image: image))
+                titleCollectionView.reloadData()
+            } else {
+                galleryPhotos.append(Photo(image: image))
+                galleryCollectionView.reloadData()
+            }
+            saveButton.isHidden = false
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    private func deletePhoto(at indexPath: IndexPath, in collectionView: UICollectionView) {
+        if collectionView == titleCollectionView {
+            titlePhotos.remove(at: indexPath.item)
+        } else {
+            galleryPhotos.remove(at: indexPath.item)
+        }
+        collectionView.reloadData()
+    }
+
+    private func toggleFavorite(at indexPath: IndexPath, in collectionView: UICollectionView) {
+        if collectionView == titleCollectionView {
+            titlePhotos[indexPath.item].isFavorite.toggle()
+        } else {
+            galleryPhotos[indexPath.item].isFavorite.toggle()
+        }
+        collectionView.reloadData()
+    }
+
+    // Функция создания UILabel
+    private func createLabel(withText text: String) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        return label
+    }
 }
-    
-    
-    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Handle image selection
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let image = info[.originalImage] as? UIImage {
-//            let newPhoto = PhotosOne(image: image, isFavorite: false)
-//            photos.append(newPhoto)
-//            collectionViewTitul.reloadData()
-//            saveButton.isHidden = false // Show save button when a new photo is added
-//        }
-//        picker.dismiss(animated: true, completion: nil)
-//    }
-
-// UICollectionView DataSource methods
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return photos.count + 1 // Additional cell for the "add photo" button
-//    }
-
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if indexPath.row == photos.count {
-//            // The last cell for adding photos
-//            let cellGallery = collectionView.dequeueReusableCell(withReuseIdentifier: "TitulPhotoCollViewCell", for: indexPath) as! TitulPhotoCollViewCell
-//            cellGallery.imageView.image = UIImage(systemName: "camera")
-//            cellGallery.imageView.tintColor = .systemGray4
-//            cellGallery.backgroundColor = .systemGray5
-//            cellGallery.imageView.layer.cornerRadius = 10
-//            cellGallery.layer.cornerRadius = 10
-//            cellGallery.favoriteButton.isHidden = true
-//            cellGallery.deleteButton.isHidden = true
-//            return cellGallery
-//        } else {
-//            let cellGallery = collectionView.dequeueReusableCell(withReuseIdentifier: "TitulPhotoCollViewCell", for: indexPath) as! TitulPhotoCollViewCell
-//            let photo = photos[indexPath.row]
-//            cellGallery.layer.cornerRadius = 10
-//            cellGallery.imageView.image = photo.image
-//            cellGallery.favoriteIcon.isHidden = !photo.isFavorite
-//            cellGallery.imageView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-//            cellGallery.imageView.layer.cornerRadius = 10
-//            cellGallery.deleteButton.tag = indexPath.row
-//            cellGallery.favoriteButton.tag = indexPath.row
-//            cellGallery.deleteButton.addTarget(self, action: #selector(deletePhotoGallery), for: .touchUpInside)
-//            cellGallery.favoriteButton.addTarget(self, action: #selector(toggleFavoriteGallery), for: .touchUpInside)
-//            // Show delete and favorite buttons only in edit mode
-//            cellGallery.favoriteButton.isHidden = !isEditMode
-//            cellGallery.deleteButton.isHidden = !isEditMode
-//            return cellGallery
-//        }
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//    func configureGalleryUI() {
-//        // Layout for collectionView
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 100, height: 100)
-//        
-//        let containerView = UIView()
-//                containerView.translatesAutoresizingMaskIntoConstraints = false
-//        containerView.backgroundColor = #colorLiteral(red: 0.9607843757, green: 0.9607843757, blue: 0.9607843757, alpha: 1)
-//                containerView.layer.cornerRadius = 10
-//                view.addSubview(containerView)
-//        
-//        let nameLabel = UILabel()
-//        nameLabel.text = "Титульные фото"
-//        nameLabel.font = .systemFont(ofSize: 18, weight: .bold)
-//        nameLabel.textColor = .black
-//        nameLabel.frame = CGRect(x: 5, y: 10, width: 200, height: 20)
-//        containerView.addSubview(nameLabel)
-//        
-//        let saveSizeLabel = UILabel()
-//        saveSizeLabel.text = "От 1 до 10 фото в формате JPG,JPGE"
-//        saveSizeLabel.font = .systemFont(ofSize: 12, weight: .regular)
-//        saveSizeLabel.textColor = .systemGray
-//        saveSizeLabel.frame = CGRect(x: 5, y: 35, width: 230, height: 20)
-//        containerView.addSubview(saveSizeLabel)
-//                                 
-//                                 
-//        // Initialize collectionView
-//        collectionViewGallery = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        collectionViewGallery.translatesAutoresizingMaskIntoConstraints = false
-//        collectionViewGallery.delegate = self
-//        collectionViewGallery.dataSource = self
-//        collectionViewGallery.backgroundColor = #colorLiteral(red: 0.9607843757, green: 0.9607843757, blue: 0.9607843757, alpha: 1)
-//        collectionViewGallery.register(GalleryPhotoCollViewCell.self, forCellWithReuseIdentifier: "GalleryPhotoCollViewCell")
-//        containerView.addSubview(collectionViewGallery)
-//        
-//         //Add button for adding photos (initially in the first cell)
-//        addButtonGallery = UIButton(type: .custom)
-//        addButtonGallery.setImage(UIImage(systemName: "camera"), for: .normal)
-//        addButtonGallery.frame = CGRect(x: 5, y: 5, width: 100, height: 100)
-//        addButtonGallery.tintColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-//        //addButton.translatesAutoresizingMaskIntoConstraints = false
-//        addButtonGallery.addTarget(self, action: #selector(addPhotoButtonTappedGallery), for: .touchUpInside)
-//        //collectionView.addSubview(addButton)
-//        collectionViewGallery.addSubview(addButtonGallery)
-//       
-//        // Save button (hidden initially)
-//        
-//        saveButtonGallery = UIButton(type: .system)
-//        saveButtonGallery.setTitle("Сохранить", for: .normal)
-//        saveButtonGallery.backgroundColor = .gray
-//        saveButtonGallery.layer.cornerRadius = 10
-//        saveButtonGallery.translatesAutoresizingMaskIntoConstraints = false
-//        saveButtonGallery.isHidden = true
-//        saveButtonGallery.addTarget(self, action: #selector(saveButtonTappedGallery), for: .touchUpInside)
-//        containerView.addSubview(saveButton)
-//        
-//        // Edit Mode button
-//        editModeButtonGallery = UIButton(type: .system)
-//        editModeButtonGallery.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.5363270761, blue: 0.488931597, alpha: 1)
-//        editModeButtonGallery.tintColor = .red
-//        editModeButtonGallery.setImage(UIImage(systemName: "pencil"), for: .normal)
-//        editModeButtonGallery.translatesAutoresizingMaskIntoConstraints = false
-//        editModeButtonGallery.addTarget(self, action: #selector(toggleEditModeGallery), for: .touchUpInside)
-//        containerView.addSubview(editModeButtonGallery)
-//        
-//        // Constraints
-//        NSLayoutConstraint.activate([
-////            containerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1700),
-////            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-////            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-////            containerView.heightAnchor.constraint(equalToConstant: 400),
-//            
-//            collectionViewGallery.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 80),
-//            collectionViewGallery.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
-//            collectionViewGallery.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
-//            collectionViewGallery.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -10),
-//            
-//            saveButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
-//            saveButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
-//            saveButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
-//            saveButton.heightAnchor.constraint(equalToConstant: 50),
-//            
-//            editModeButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
-//            editModeButton.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10)
-//        ])
-//    }
-//    
-//    @objc func addPhotoButtonTappedGallery() {
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-//        imagePicker.sourceType = .photoLibrary
-//        present(imagePicker, animated: true, completion: nil)
-//    }
-//    
-//    @objc func saveButtonTappedGallery() {
-//        // Save photos logic
-//        saveButton.isHidden = true
-//        isEditMode = false
-//        editModeButton.setImage(UIImage(systemName: "pencil"), for: .normal)
-//        //collectionViewGallery.reloadData()
-//    }
-//    
-//    @objc func toggleEditModeGallery() {
-//        isEditMode.toggle()
-//        let icon = isEditMode ? "xmark" : "pencil"
-//        editModeButton.setImage(UIImage(systemName: icon), for: .normal)
-//       // collectionViewGallery.reloadData()
-//    }
-//    
-//    // Handle image selection
-//    func imagePickerControllerGallery(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let image = info[.originalImage] as? UIImage {
-//            let newPhoto = PhotoGallery(image: image, isFavorite: false)
-//            photoTutul.append(newPhoto)
-//            //collectionViewGallery.reloadData()
-//            saveButton.isHidden = false // Show save button when a new photo is added
-//        }
-//        picker.dismiss(animated: true, completion: nil)
-//    }
-//    
-//    // UICollectionView DataSource methods
-//    func collectionViewGallery(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return photos.count + 1 // Additional cell for the "add photo" button
-//    }
-//    
-//    func collectionViewGallery(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if indexPath.row == photos.count {
-//            // The last cell for adding photos
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryPhotoCollViewCell", for: indexPath) as! GalleryPhotoCollViewCell
-//            cell.imageView.image = UIImage(systemName: "camera")
-////            cell.imageView.frame.size.width = 30
-////            cell.imageView.frame.size.height = 30
-//            cell.imageView.tintColor = .systemGray4
-//            cell.backgroundColor = .systemGray5
-//            cell.imageView.layer.cornerRadius = 20
-//            cell.layer.cornerRadius = 20
-//            cell.favoriteButton.isHidden = true
-//            cell.deleteButton.isHidden = true
-//            return cell
-//        } else {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryPhotoCollViewCell", for: indexPath) as! GalleryPhotoCollViewCell
-//            let photo = photos[indexPath.row]
-//            cell.layer.cornerRadius = 20
-//            cell.imageView.image = photo.image
-//            cell.favoriteIcon.isHidden = !photo.isFavorite
-//            cell.imageView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-//            cell.imageView.layer.cornerRadius = 20
-//            cell.deleteButton.tag = indexPath.row
-//            cell.favoriteButton.tag = indexPath.row
-//            cell.deleteButton.addTarget(self, action: #selector(deletePhoto), for: .touchUpInside)
-//            cell.favoriteButton.addTarget(self, action: #selector(toggleFavorite), for: .touchUpInside)
-//            
-//            // Show delete and favorite buttons only in edit mode
-//            cell.favoriteButton.isHidden = !isEditMode
-//            cell.deleteButton.isHidden = !isEditMode
-//            return cell
-//        }
-//    }
-//    
-//    @objc func deletePhotoGallery(sender: UIButton) {
-//        photos.remove(at: sender.tag)
-//       // collectionViewGallery.reloadData()
-//        if photos.isEmpty {
-//            saveButton.isHidden = true // Hide save button if no photos
-//        }
-//    }
-//    
-//    @objc func toggleFavoriteGallery(sender: UIButton) {
-//        let index = sender.tag
-//        photos[index].isFavorite.toggle()
-//       // collectionViewGallery.reloadData()
-//    }
-//    
-//    
-//}
