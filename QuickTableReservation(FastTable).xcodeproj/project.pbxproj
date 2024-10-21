@@ -14,6 +14,8 @@
 		205BCB1D2CC1946800436812 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB1C2CC1946800436812 /* PhotoCell.swift */; };
 		205BCB1F2CC1975100436812 /* GallerylPhotoCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB1E2CC1975100436812 /* GallerylPhotoCollViewCell.swift */; };
 		205BCB212CC197F100436812 /* TitulPhotoCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB202CC197F100436812 /* TitulPhotoCollViewCell.swift */; };
+		20648EAA2CC6A7480043C498 /* WorkingHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20648EA92CC6A7480043C498 /* WorkingHoursViewController.swift */; };
+		20648EAC2CC6A7990043C498 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20648EAB2CC6A7990043C498 /* ScheduleCell.swift */; };
 		206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */; };
 		20753C1A2CBDC07F004E2EB5 /* SettingEstablViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */; };
 		20753C1C2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */; };
@@ -57,6 +59,8 @@
 		205BCB1C2CC1946800436812 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		205BCB1E2CC1975100436812 /* GallerylPhotoCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallerylPhotoCollViewCell.swift; sourceTree = "<group>"; };
 		205BCB202CC197F100436812 /* TitulPhotoCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitulPhotoCollViewCell.swift; sourceTree = "<group>"; };
+		20648EA92CC6A7480043C498 /* WorkingHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingHoursViewController.swift; sourceTree = "<group>"; };
+		20648EAB2CC6A7990043C498 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewUIView.swift; sourceTree = "<group>"; };
 		20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEstablViewController.swift; sourceTree = "<group>"; };
 		20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranSettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -166,6 +170,15 @@
 			path = FlingActionButton;
 			sourceTree = "<group>";
 		};
+		20648EA82CC6A6F10043C498 /* WorkingHoursSetting */ = {
+			isa = PBXGroup;
+			children = (
+				20648EA92CC6A7480043C498 /* WorkingHoursViewController.swift */,
+				20648EAB2CC6A7990043C498 /* ScheduleCell.swift */,
+			);
+			path = WorkingHoursSetting;
+			sourceTree = "<group>";
+		};
 		20753C182CBDBFBF004E2EB5 /* SettingEstablisTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +212,7 @@
 			children = (
 				20E903382CB9CFF7009A1DD6 /* MenuTableVCFiles */,
 				20E9033A2CB9D3FB009A1DD6 /* SettingUpAnEstablishment */,
+				20648EA82CC6A6F10043C498 /* WorkingHoursSetting */,
 				2092F2BA2CA5698B003DB9BD /* ViewControllers */,
 				2092F2B72CA56933003DB9BD /* TabBarController */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
@@ -444,9 +458,11 @@
 				209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */,
 				20753C1C2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift in Sources */,
 				209C43C82CA9B5C0007397BC /* NotificationViewController.swift in Sources */,
+				20648EAC2CC6A7990043C498 /* ScheduleCell.swift in Sources */,
 				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
 				20753C222CBDC2F7004E2EB5 /* SettingKitchenViewController.swift in Sources */,
 				20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */,
+				20648EAA2CC6A7480043C498 /* WorkingHoursViewController.swift in Sources */,
 				200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */,
 				20E9033C2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift in Sources */,
 				20753C1E2CBDC17C004E2EB5 /* KitchenTableViewCell.swift in Sources */,

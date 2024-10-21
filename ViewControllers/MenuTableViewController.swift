@@ -193,7 +193,7 @@ class MenuTableViewController: UIViewController {
         var controlsSubItems = [
             
             OutlineItem(imageName: nil, title: NSLocalizedString("Настройки заведения", comment: ""), viewController: SettingEstablishmentViewController.self), //+++
-            OutlineItem(imageName: nil, title: NSLocalizedString("Время работы", comment: ""), viewController: SegmentedControlViewController.self),
+            OutlineItem(imageName: nil, title: NSLocalizedString("Время работы", comment: ""), viewController: WorkingHoursViewController.self),
             OutlineItem(imageName: nil, title: NSLocalizedString("Настройка бронирования", comment: ""), viewController: SegmentedControlViewController.self),
             OutlineItem(imageName: nil, title: NSLocalizedString("Меню", comment: ""), viewController: SegmentedControlViewController.self),
             OutlineItem(imageName: nil, title: NSLocalizedString("Схемы залов", comment: ""), viewController: SegmentedControlViewController.self),
