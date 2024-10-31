@@ -206,7 +206,7 @@ class MenuTableViewController: UIViewController {
    // ___________________________
     
     lazy var analiticsOutline: OutlineItem = {
-        return OutlineItem(imageName: "clock", title: NSLocalizedString("Аналитика", comment: ""), viewController: SegmentedControlViewController.self)
+        return OutlineItem(imageName: "clock", title: NSLocalizedString("Аналитика", comment: ""), viewController: AnaliticRestaurantViewController.self)
     }()
     
     lazy var billingOutline: OutlineItem = {
