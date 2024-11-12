@@ -135,6 +135,10 @@ class MenuTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let viewContr = UINavigationController(rootViewController: MenuTableViewController())
+        viewContr.isNavigationBarHidden = true
+            //.isHidden = true
         //view.addSubview(button)
        // view.addSubview(clickerSelector)
         view.addSubview(avatarView)
@@ -196,7 +200,7 @@ class MenuTableViewController: UIViewController {
             OutlineItem(imageName: nil, title: NSLocalizedString("Время работы", comment: ""), viewController: WorkingHoursViewController.self),
             OutlineItem(imageName: nil, title: NSLocalizedString("Настройка бронирования", comment: ""), viewController: SegmentedControlViewController.self),
             OutlineItem(imageName: nil, title: NSLocalizedString("Меню", comment: ""), viewController: SegmentedControlViewController.self),
-            OutlineItem(imageName: nil, title: NSLocalizedString("Схемы залов", comment: ""), viewController: SegmentedControlViewController.self),
+            OutlineItem(imageName: nil, title: NSLocalizedString("Схемы залов", comment: ""), viewController: HallLayoutViewController.self),
             OutlineItem(imageName: nil, title: NSLocalizedString("Депозиты", comment: ""), viewController: SegmentedControlViewController.self),
             OutlineItem(imageName:nil, title: NSLocalizedString("Интеграция", comment: ""), viewController: SegmentedControlViewController.self)
         ]
