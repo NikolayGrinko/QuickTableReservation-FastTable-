@@ -9,6 +9,67 @@ import UIKit
 
 class BasicViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
 
+    private let switches: UISwitch = {
+        let switches = UISwitch()
+        switches.onTintColor = .lightGray
+        switches.frame = CGRect(x: 10, y: 520, width: 70, height: 30)
+        return switches
+    }()
+    
+    private let employeeVisibilityLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.text = "Виден только сотрудникам"
+        nameLabel.frame = CGRect(x: 90, y: 520, width: 320, height: 20)
+        nameLabel.textAlignment = .left
+        nameLabel.numberOfLines = 0
+        nameLabel.textColor = .black
+        nameLabel.font = .systemFont(ofSize: 14)
+        return nameLabel
+    }()
+    
+    private let guestVisibilityLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.text = "При включении гости не будут видеть этот стол в приложении FastTable, но он будет доступен для сотрудников"
+        nameLabel.frame = CGRect(x: 90, y: 540, width: 320, height: 40)
+        nameLabel.textAlignment = .left
+        nameLabel.numberOfLines = 0
+        nameLabel.textColor = .lightGray
+        nameLabel.font = .systemFont(ofSize: 12)
+        return nameLabel
+    }()
+    
+    private let photoTableLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.text = "Фото стола"
+        nameLabel.frame = CGRect(x: 10, y: 590, width: 150, height: 20)
+        nameLabel.textAlignment = .left
+        nameLabel.textColor = .black
+        nameLabel.font = .systemFont(ofSize: 20)
+        return nameLabel
+    }()
+    
+    private let extensionLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.text = "- Расширение: jpeg, jpeg"
+        nameLabel.frame = CGRect(x: 10, y: 690, width: 380, height: 10)
+        nameLabel.textAlignment = .left
+        nameLabel.textColor = .black
+        nameLabel.font = .systemFont(ofSize: 13)
+        return nameLabel
+    }()
+    
+    private let sizeFilesLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.text = "- Размер файла: не более 25 Mb"
+        nameLabel.frame = CGRect(x: 10, y: 715, width: 380, height: 10)
+        nameLabel.textAlignment = .left
+        nameLabel.textColor = .black
+        nameLabel.font = .systemFont(ofSize: 13)
+        return nameLabel
+    }()
+    
+    let arrayImage = [UIImage(named: "table"), UIImage(named: "table2"), UIImage(named: "table3"), UIImage(named: "table4")]
+    
     private let cellIdentifier = "TableCell"
     private var selectedIndexPath: IndexPath?
     
@@ -48,8 +109,8 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
         return nameLabel
     }()
     
-    let button = UIButton()
-    private lazy var restaurButton: UIButton = {
+    let buttons = UIButton()
+    private lazy var restaur12Button: UIButton = {
         // Настраиваем конфигурацию кнопки
         var config = UIButton.Configuration.gray()
         // Задаем текст для title и subtitle
@@ -80,15 +141,15 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
             config.imagePlacement = .trailing           // Располагаем изображение слева от текста
         }
         // Присваиваем конфигурацию кнопке
-        button.configuration = config
-        button.frame = CGRect(x: 10, y: 170, width: 180, height: 60)
-        button.addTarget(self, action: #selector(goToInfo), for: .touchUpInside)
+        buttons.configuration = config
+        buttons.frame = CGRect(x: 10, y: 170, width: 180, height: 60)
+        buttons.addTarget(self, action: #selector(goToInfo1), for: .touchUpInside)
         // Добавляем кнопку на экран (пример для ViewController)
-        view.addSubview(button)
-        return button
+        view.addSubview(buttons)
+        return buttons
     }()
     
-    @objc private func goToInfo() {
+    @objc private func goToInfo1() {
         print("restaurant")
         let restaurant = SettingEstablViewController()
         if let sheet = restaurant.sheetPresentationController {
@@ -210,7 +271,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
         config.buttonSize = .medium
         config.imagePlacement = .trailing
         config.titleAlignment = .leading
-        config.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
+        config.contentInsets = .init(top: 5, leading: 50, bottom: 5, trailing: 50)
         config.cornerStyle = .large
         // Настраиваем стили для title и subtitle
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
@@ -242,6 +303,100 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
         present(restaurant, animated: true)
     }
     
+    let button12Tap = UIButton()
+    private lazy var nameOfTheEstablishmentButtons: UIButton = {
+        // Настраиваем конфигурацию кнопки
+        var config = UIButton.Configuration.gray()
+        // Задаем текст для title и subtitle
+        config.title = "Загрузить фото"
+        //config.subtitle = "улица Лисицина 2А,Ярославль, ярославская область"
+        config.baseBackgroundColor = .systemGray6
+        config.buttonSize = .medium
+        config.imagePlacement = .leading
+        config.titleAlignment = .trailing
+        config.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
+        config.cornerStyle = .large
+        // Настраиваем стили для title и subtitle
+        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var updated = incoming
+            updated.font = UIFont.systemFont(ofSize: 20)
+            updated.foregroundColor = UIColor.black
+            return updated
+        }
+        config.subtitleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var updated = incoming
+            updated.font = UIFont.systemFont(ofSize: 12)
+            updated.foregroundColor = UIColor.lightGray
+            return updated
+        }
+        if let image = UIImage(named: "next")?.withTintColor(.black, renderingMode: .alwaysOriginal) {
+            config.image = image // Добавляем черное изображение
+            config.imagePadding = 10                  // Отступ изображения от текста
+            config.imagePlacement = .leading           // Располагаем изображение слева от текста
+        }
+        // Присваиваем конфигурацию кнопке
+        button12Tap.configuration = config
+        button12Tap.frame = CGRect(x: 10, y: 620, width: 380, height: 50)
+        button12Tap.addTarget(self, action: #selector(goToInfo12), for: .touchUpInside)
+        // Добавляем кнопку на экран (пример для ViewController)
+       // button12Tap.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(button12Tap)
+        return button12Tap
+    }()
+    
+    // 2 переход с навигацией
+    @objc private func goToInfo12() {
+        print("restaurant")
+//        let restaurant = "___________"()
+//        restaurant.modalPresentationStyle = .custom
+//        present(restaurant, animated: true)
+//        //
+//        navigationController?.pushViewController(restaurant, animated: true)
+    }
+
+    let buttonsTap2 = UIButton()
+    private lazy var addTapButtons: UIButton = {
+        // Настраиваем конфигурацию кнопки
+        var config = UIButton.Configuration.gray()
+        // Задаем текст для title и subtitle
+        config.title = "Добавить"
+        config.baseBackgroundColor = .red
+        config.buttonSize = .medium
+        config.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
+        config.cornerStyle = .large
+        // Настраиваем стили для title и subtitle
+        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var updated = incoming
+            updated.font = UIFont.systemFont(ofSize: 20)
+            updated.foregroundColor = UIColor.white
+            return updated
+        }
+        config.subtitleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var updated = incoming
+            updated.font = UIFont.systemFont(ofSize: 12)
+            updated.foregroundColor = UIColor.red
+            return updated
+        }
+        // Присваиваем конфигурацию кнопке
+        buttonsTap2.configuration = config
+        buttonsTap2.frame = CGRect(x: 10, y: 735, width: 380, height: 50)
+        buttonsTap2.addTarget(self, action: #selector(goToIn), for: .touchUpInside)
+        // Добавляем кнопку на экран (пример для ViewController)
+        //buttonsTap2.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonsTap2)
+        return buttonsTap2
+    }()
+    
+    // 2 переход с навигацией
+    @objc private func goToIn() {
+        print("restaurant")
+//        let restaurant = "___________"()
+//        restaurant.modalPresentationStyle = .custom
+//        present(restaurant, animated: true)
+//        //
+//        navigationController?.pushViewController(restaurant, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -250,13 +405,21 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
         setupCollectionView()
         
         view.addSubview(nameLabel)
-        view.addSubview(restaurButton)
+        view.addSubview(restaur12Button)
         view.addSubview(restaurButton2)
         view.addSubview(numberLabel)
         view.addSubview(maxCountGuestsLabel)
         view.addSubview(restaurButton3)
         view.addSubview(restaurButton4)
         view.addSubview(electTableFormat)
+        view.addSubview(switches)
+        view.addSubview(employeeVisibilityLabel)
+        view.addSubview(guestVisibilityLabel)
+        view.addSubview(photoTableLabel)
+        view.addSubview(nameOfTheEstablishmentButtons)
+        view.addSubview(extensionLabel)
+        view.addSubview(sizeFilesLabel)
+        view.addSubview(addTapButtons)
        
     }
     
@@ -281,8 +444,7 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
-            collectionView.heightAnchor.constraint(equalToConstant: 100),
-            //collectionView.widthAnchor.constraint(equalToConstant: 100)
+            collectionView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 
@@ -296,7 +458,8 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? TableCell else {
             return UICollectionViewCell()
         }
-        cell.configure(number: "\(12)")
+        //cell.configure(number: "\(12)", imageCell: arrayImage[indexPath.row]!)
+        cell.configure(imageCell: arrayImage[indexPath.row]!)
         return cell
     }
 
@@ -321,6 +484,6 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 85, height: 85)
     }
-    
-    
 }
+
+

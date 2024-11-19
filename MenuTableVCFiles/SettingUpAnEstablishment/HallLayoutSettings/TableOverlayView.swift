@@ -41,7 +41,6 @@ class TableOverlayView: UIView {
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -5),
-            // titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
     

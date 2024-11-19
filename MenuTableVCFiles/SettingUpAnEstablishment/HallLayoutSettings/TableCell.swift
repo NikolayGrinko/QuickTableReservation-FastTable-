@@ -9,14 +9,14 @@ import UIKit
 
 class TableCell: UICollectionViewCell {
 
-    private let numberLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.textColor = .white
-        return label
+    private let frontImageCell: UIImageView = {
+        let imageCell = UIImageView()
+        imageCell.image = UIImage(named: "table")
+        imageCell.translatesAutoresizingMaskIntoConstraints = false
+        imageCell.contentMode = .scaleAspectFit
+        return imageCell
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCell()
@@ -27,19 +27,19 @@ class TableCell: UICollectionViewCell {
     }
 
     private func setupCell() {
-        contentView.addSubview(numberLabel)
+        contentView.addSubview(frontImageCell)
         contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = true
         contentView.backgroundColor = .lightGray
 
         NSLayoutConstraint.activate([
-            numberLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            numberLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            frontImageCell.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            frontImageCell.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
 
-    func configure(number: String) {
-        numberLabel.text = number
+    func configure(imageCell: UIImage) {
+        frontImageCell.image = imageCell
     }
 
     func setSelected(_ selected: Bool) {
