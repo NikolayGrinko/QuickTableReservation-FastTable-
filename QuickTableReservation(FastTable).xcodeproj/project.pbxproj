@@ -26,6 +26,7 @@
 		20753C1C2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */; };
 		20753C1E2CBDC17C004E2EB5 /* KitchenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */; };
 		20753C222CBDC2F7004E2EB5 /* SettingKitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C212CBDC2F7004E2EB5 /* SettingKitchenViewController.swift */; };
+		2089C6922CEBFC7600BAD037 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2089C6912CEBFC7600BAD037 /* TableCell.swift */; };
 		2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2B82CA56970003DB9BD /* TabBarController.swift */; };
 		2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */; };
 		2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */; };
@@ -76,6 +77,7 @@
 		20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranSettingTableViewCell.swift; sourceTree = "<group>"; };
 		20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenTableViewCell.swift; sourceTree = "<group>"; };
 		20753C212CBDC2F7004E2EB5 /* SettingKitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingKitchenViewController.swift; sourceTree = "<group>"; };
+		2089C6912CEBFC7600BAD037 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		2092F2702CA5369A003DB9BD /* QuickTableReservation(FastTable).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickTableReservation(FastTable).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2862CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2902CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +214,7 @@
 				206A67362CE3810200A2F167 /* HallLayoutViewController.swift */,
 				206A67382CE381B000A2F167 /* BasicViewController.swift */,
 				206A673A2CE381D800A2F167 /* TableOverlayView.swift */,
+				2089C6912CEBFC7600BAD037 /* TableCell.swift */,
 			);
 			path = HallLayoutSettings;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */,
 				2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */,
 				20FCBBEE2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift in Sources */,
+				2089C6922CEBFC7600BAD037 /* TableCell.swift in Sources */,
 				206A67392CE381B000A2F167 /* BasicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

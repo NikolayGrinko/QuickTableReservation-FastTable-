@@ -144,9 +144,9 @@ class HallLayoutViewController: UIViewController {
     @objc private func goToInfo3() {
         print("restaurant")
         let restaurant = BasicViewController()
-        restaurant.modalPresentationStyle = .custom
-        //navigationController?.pushViewController(restaurant, animated: true)
-        present(restaurant, animated: true)
+        //restaurant.modalPresentationStyle = .custom
+        navigationController?.pushViewController(restaurant, animated: true)
+       // present(restaurant, animated: true)
     }
     
     private let imageViewImage: UIImageView = {
