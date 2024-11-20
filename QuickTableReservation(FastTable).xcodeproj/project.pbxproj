@@ -9,7 +9,24 @@
 /* Begin PBXBuildFile section */
 		200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86752CA75E86002DA4C3 /* CustomButton.swift */; };
 		200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */; };
+		2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */; };
+		203D07992CD430F4003DBE23 /* AnaliticRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203D07982CD430F4003DBE23 /* AnaliticRestaurantViewController.swift */; };
+		203D079B2CD433ED003DBE23 /* AnaliticRestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203D079A2CD433ED003DBE23 /* AnaliticRestUIView.swift */; };
+		2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045C8692CB9BBEC0028E10C /* ActionButton.swift */; };
+		205BCB1D2CC1946800436812 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB1C2CC1946800436812 /* PhotoCell.swift */; };
+		205BCB1F2CC1975100436812 /* GallerylPhotoCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB1E2CC1975100436812 /* GallerylPhotoCollViewCell.swift */; };
+		205BCB212CC197F100436812 /* TitulPhotoCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BCB202CC197F100436812 /* TitulPhotoCollViewCell.swift */; };
+		20648EAA2CC6A7480043C498 /* WorkingHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20648EA92CC6A7480043C498 /* WorkingHoursViewController.swift */; };
+		20648EAC2CC6A7990043C498 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20648EAB2CC6A7990043C498 /* ScheduleCell.swift */; };
+		206A67372CE3810200A2F167 /* HallLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206A67362CE3810200A2F167 /* HallLayoutViewController.swift */; };
+		206A67392CE381B000A2F167 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206A67382CE381B000A2F167 /* BasicViewController.swift */; };
+		206A673B2CE381D800A2F167 /* TableOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206A673A2CE381D800A2F167 /* TableOverlayView.swift */; };
 		206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */; };
+		20753C1A2CBDC07F004E2EB5 /* SettingEstablViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */; };
+		20753C1C2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */; };
+		20753C1E2CBDC17C004E2EB5 /* KitchenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */; };
+		20753C222CBDC2F7004E2EB5 /* SettingKitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20753C212CBDC2F7004E2EB5 /* SettingKitchenViewController.swift */; };
+		2089C6922CEBFC7600BAD037 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2089C6912CEBFC7600BAD037 /* TableCell.swift */; };
 		2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2B82CA56970003DB9BD /* TabBarController.swift */; };
 		2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BB2CA56E0E003DB9BD /* TablePlacementViewController.swift */; };
 		2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092F2BD2CA56E3C003DB9BD /* TableReservationViewController.swift */; };
@@ -19,6 +36,7 @@
 		209C43C82CA9B5C0007397BC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C43C72CA9B5C0007397BC /* NotificationViewController.swift */; };
 		209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C43CC2CA9F568007397BC /* NotifElemUIView.swift */; };
 		20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B325E82CA5A6A8000A731B /* AvatarView.swift */; };
+		20E9033C2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */; };
 		20FCBBEE2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +60,24 @@
 /* Begin PBXFileReference section */
 		200A86752CA75E86002DA4C3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		200A86782CA76366002DA4C3 /* NotifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiTableViewController.swift; sourceTree = "<group>"; };
+		2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
+		203D07982CD430F4003DBE23 /* AnaliticRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticRestaurantViewController.swift; sourceTree = "<group>"; };
+		203D079A2CD433ED003DBE23 /* AnaliticRestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticRestUIView.swift; sourceTree = "<group>"; };
+		2045C8692CB9BBEC0028E10C /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		205BCB1C2CC1946800436812 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		205BCB1E2CC1975100436812 /* GallerylPhotoCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallerylPhotoCollViewCell.swift; sourceTree = "<group>"; };
+		205BCB202CC197F100436812 /* TitulPhotoCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitulPhotoCollViewCell.swift; sourceTree = "<group>"; };
+		20648EA92CC6A7480043C498 /* WorkingHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingHoursViewController.swift; sourceTree = "<group>"; };
+		20648EAB2CC6A7990043C498 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		206A67362CE3810200A2F167 /* HallLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallLayoutViewController.swift; sourceTree = "<group>"; };
+		206A67382CE381B000A2F167 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		206A673A2CE381D800A2F167 /* TableOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOverlayView.swift; sourceTree = "<group>"; };
 		206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewUIView.swift; sourceTree = "<group>"; };
+		20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEstablViewController.swift; sourceTree = "<group>"; };
+		20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranSettingTableViewCell.swift; sourceTree = "<group>"; };
+		20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenTableViewCell.swift; sourceTree = "<group>"; };
+		20753C212CBDC2F7004E2EB5 /* SettingKitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingKitchenViewController.swift; sourceTree = "<group>"; };
+		2089C6912CEBFC7600BAD037 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		2092F2702CA5369A003DB9BD /* QuickTableReservation(FastTable).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickTableReservation(FastTable).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2862CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2092F2902CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickTableReservation(FastTable)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +90,7 @@
 		209C43C72CA9B5C0007397BC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		209C43CC2CA9F568007397BC /* NotifElemUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifElemUIView.swift; sourceTree = "<group>"; };
 		20B325E82CA5A6A8000A731B /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEstablishmentViewController.swift; sourceTree = "<group>"; };
 		20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickedSelectedEstablishmentUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,14 +166,93 @@
 			path = CustomButton;
 			sourceTree = "<group>";
 		};
+		203D07972CD43070003DBE23 /* AnaliticRestaurant */ = {
+			isa = PBXGroup;
+			children = (
+				203D07982CD430F4003DBE23 /* AnaliticRestaurantViewController.swift */,
+				203D079C2CD433F3003DBE23 /* UIView */,
+			);
+			path = AnaliticRestaurant;
+			sourceTree = "<group>";
+		};
+		203D079C2CD433F3003DBE23 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				203D079A2CD433ED003DBE23 /* AnaliticRestUIView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		2044ABC12CC4782B00310289 /* ContrSettingViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				205BCB1C2CC1946800436812 /* PhotoCell.swift */,
+			);
+			path = ContrSettingViewCell;
+			sourceTree = "<group>";
+		};
+		2045C8512CB9BA260028E10C /* FlingActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				2045C8692CB9BBEC0028E10C /* ActionButton.swift */,
+			);
+			path = FlingActionButton;
+			sourceTree = "<group>";
+		};
+		20648EA82CC6A6F10043C498 /* WorkingHoursSetting */ = {
+			isa = PBXGroup;
+			children = (
+				20648EA92CC6A7480043C498 /* WorkingHoursViewController.swift */,
+				20648EAB2CC6A7990043C498 /* ScheduleCell.swift */,
+			);
+			path = WorkingHoursSetting;
+			sourceTree = "<group>";
+		};
+		206A67352CE3808300A2F167 /* HallLayoutSettings */ = {
+			isa = PBXGroup;
+			children = (
+				206A67362CE3810200A2F167 /* HallLayoutViewController.swift */,
+				206A67382CE381B000A2F167 /* BasicViewController.swift */,
+				206A673A2CE381D800A2F167 /* TableOverlayView.swift */,
+				2089C6912CEBFC7600BAD037 /* TableCell.swift */,
+			);
+			path = HallLayoutSettings;
+			sourceTree = "<group>";
+		};
+		20753C182CBDBFBF004E2EB5 /* SettingEstablisTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				20753C192CBDC07F004E2EB5 /* SettingEstablViewController.swift */,
+				20753C212CBDC2F7004E2EB5 /* SettingKitchenViewController.swift */,
+			);
+			path = SettingEstablisTableViewCell;
+			sourceTree = "<group>";
+		};
+		20753C1F2CBDC19F004E2EB5 /* ViewControllersSetting */ = {
+			isa = PBXGroup;
+			children = (
+				20E9033B2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift */,
+			);
+			path = ViewControllersSetting;
+			sourceTree = "<group>";
+		};
+		20753C202CBDC1B8004E2EB5 /* ViewContrSettingCellCell */ = {
+			isa = PBXGroup;
+			children = (
+				20753C1B2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift */,
+				20753C1D2CBDC17C004E2EB5 /* KitchenTableViewCell.swift */,
+				205BCB202CC197F100436812 /* TitulPhotoCollViewCell.swift */,
+				205BCB1E2CC1975100436812 /* GallerylPhotoCollViewCell.swift */,
+			);
+			path = ViewContrSettingCellCell;
+			sourceTree = "<group>";
+		};
 		2092F2672CA5369A003DB9BD = {
 			isa = PBXGroup;
 			children = (
-				209C43C92CA9B665007397BC /* Controllers */,
-				200A86772CA76254002DA4C3 /* TableViewControllers */,
-				20E2C6FA2CA60AA700C863FB /* UIView */,
-				2092F2BA2CA5698B003DB9BD /* ViewControllers */,
 				2092F2B72CA56933003DB9BD /* TabBarController */,
+				20E903382CB9CFF7009A1DD6 /* MenuTableVCFiles */,
+				2092F2BA2CA5698B003DB9BD /* ViewControllers */,
 				2092F2722CA5369A003DB9BD /* QuickTableReservation(FastTable) */,
 				2092F2892CA5369C003DB9BD /* QuickTableReservation(FastTable)Tests */,
 				2092F2932CA5369C003DB9BD /* QuickTableReservation(FastTable)UITests */,
@@ -158,6 +273,7 @@
 		2092F2B72CA56933003DB9BD /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				2038A5692CB817D10054A537 /* SegmentedControlViewController.swift */,
 				2092F2B82CA56970003DB9BD /* TabBarController.swift */,
 			);
 			path = TabBarController;
@@ -186,13 +302,47 @@
 		20E2C6FA2CA60AA700C863FB /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				20E903392CB9D0FE009A1DD6 /* TableViewCell */,
 				2021FE2A2CAC898F00A01BA3 /* CustomButton */,
 				20B325E82CA5A6A8000A731B /* AvatarView.swift */,
-				209C43CC2CA9F568007397BC /* NotifElemUIView.swift */,
 				20FCBBED2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift */,
-				206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		20E903382CB9CFF7009A1DD6 /* MenuTableVCFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2045C8512CB9BA260028E10C /* FlingActionButton */,
+				209C43C92CA9B665007397BC /* Controllers */,
+				200A86772CA76254002DA4C3 /* TableViewControllers */,
+				20E2C6FA2CA60AA700C863FB /* UIView */,
+				20E9033A2CB9D3FB009A1DD6 /* SettingUpAnEstablishment */,
+			);
+			path = MenuTableVCFiles;
+			sourceTree = "<group>";
+		};
+		20E903392CB9D0FE009A1DD6 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				209C43CC2CA9F568007397BC /* NotifElemUIView.swift */,
+				206B56BA2CAC3CF3000A1835 /* PopUpViewUIView.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		20E9033A2CB9D3FB009A1DD6 /* SettingUpAnEstablishment */ = {
+			isa = PBXGroup;
+			children = (
+				206A67352CE3808300A2F167 /* HallLayoutSettings */,
+				20753C202CBDC1B8004E2EB5 /* ViewContrSettingCellCell */,
+				20753C182CBDBFBF004E2EB5 /* SettingEstablisTableViewCell */,
+				20753C1F2CBDC19F004E2EB5 /* ViewControllersSetting */,
+				2044ABC12CC4782B00310289 /* ContrSettingViewCell */,
+				20648EA82CC6A6F10043C498 /* WorkingHoursSetting */,
+				203D07972CD43070003DBE23 /* AnaliticRestaurant */,
+			);
+			path = SettingUpAnEstablishment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +448,10 @@
 			);
 			mainGroup = 2092F2672CA5369A003DB9BD;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2045C8502CB9B7990028E10C /* XCRemoteSwiftPackageReference "TGFlingActionButton" */,
+				2045C8522CB9BA6C0028E10C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2092F2712CA5369A003DB9BD /* Products */;
 			projectDirPath = "";
@@ -339,19 +493,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205BCB212CC197F100436812 /* TitulPhotoCollViewCell.swift in Sources */,
+				205BCB1F2CC1975100436812 /* GallerylPhotoCollViewCell.swift in Sources */,
+				203D07992CD430F4003DBE23 /* AnaliticRestaurantViewController.swift in Sources */,
 				2092F2BE2CA56E3C003DB9BD /* TableReservationViewController.swift in Sources */,
 				2092F2B92CA56970003DB9BD /* TabBarController.swift in Sources */,
 				209C43CD2CA9F568007397BC /* NotifElemUIView.swift in Sources */,
+				203D079B2CD433ED003DBE23 /* AnaliticRestUIView.swift in Sources */,
+				20753C1C2CBDC0E6004E2EB5 /* RestauranSettingTableViewCell.swift in Sources */,
 				209C43C82CA9B5C0007397BC /* NotificationViewController.swift in Sources */,
+				206A67372CE3810200A2F167 /* HallLayoutViewController.swift in Sources */,
+				20648EAC2CC6A7990043C498 /* ScheduleCell.swift in Sources */,
 				2092F2C02CA56E60003DB9BD /* OpenTableViewController.swift in Sources */,
+				20753C222CBDC2F7004E2EB5 /* SettingKitchenViewController.swift in Sources */,
 				20B325E92CA5A6A8000A731B /* AvatarView.swift in Sources */,
+				20648EAA2CC6A7480043C498 /* WorkingHoursViewController.swift in Sources */,
 				200A86762CA75E86002DA4C3 /* CustomButton.swift in Sources */,
+				20E9033C2CB9D471009A1DD6 /* SettingEstablishmentViewController.swift in Sources */,
+				20753C1E2CBDC17C004E2EB5 /* KitchenTableViewCell.swift in Sources */,
+				2045C86A2CB9BBEC0028E10C /* ActionButton.swift in Sources */,
+				20753C1A2CBDC07F004E2EB5 /* SettingEstablViewController.swift in Sources */,
+				206A673B2CE381D800A2F167 /* TableOverlayView.swift in Sources */,
 				206B56BB2CAC3CF3000A1835 /* PopUpViewUIView.swift in Sources */,
 				2092F2C42CA56E87003DB9BD /* MenuTableViewController.swift in Sources */,
+				2038A56A2CB817D10054A537 /* SegmentedControlViewController.swift in Sources */,
+				205BCB1D2CC1946800436812 /* PhotoCell.swift in Sources */,
 				200A86792CA76366002DA4C3 /* NotifiTableViewController.swift in Sources */,
 				2092F2BC2CA56E0E003DB9BD /* TablePlacementViewController.swift in Sources */,
 				2092F2C22CA56E71003DB9BD /* CloseTableViewController.swift in Sources */,
 				20FCBBEE2CAB448A004F98A1 /* ClickedSelectedEstablishmentUIView.swift in Sources */,
+				2089C6922CEBFC7600BAD037 /* TableCell.swift in Sources */,
+				206A67392CE381B000A2F167 /* BasicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +866,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2045C8502CB9B7990028E10C /* XCRemoteSwiftPackageReference "TGFlingActionButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TilakGondi/TGFlingActionButton.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2045C8522CB9BA6C0028E10C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 2092F2682CA5369A003DB9BD /* Project object */;
 }
