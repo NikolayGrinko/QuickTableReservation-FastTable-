@@ -390,11 +390,11 @@ class BasicViewController: UIViewController, UICollectionViewDelegate, UICollect
     // 2 переход с навигацией
     @objc private func goToIn() {
         print("restaurant")
-//        let restaurant = "___________"()
+        let restaurant = SettingTableViewController()
 //        restaurant.modalPresentationStyle = .custom
 //        present(restaurant, animated: true)
 //        //
-//        navigationController?.pushViewController(restaurant, animated: true)
+        navigationController?.pushViewController(restaurant, animated: true)
     }
     
     override func viewDidLoad() {

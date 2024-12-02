@@ -390,6 +390,7 @@ class HallLayoutViewController: UIViewController {
         selectedMode = 0
         UIView.animate(withDuration: 0.3) {
             self.redOverlayView.frame.origin.x = 0
+            
         }
     }
     
@@ -397,6 +398,7 @@ class HallLayoutViewController: UIViewController {
         selectedMode = 1
         UIView.animate(withDuration: 0.3) {
             self.redOverlayView.frame.origin.x = self.view.frame.width / 2
+            
         }
     }
     
